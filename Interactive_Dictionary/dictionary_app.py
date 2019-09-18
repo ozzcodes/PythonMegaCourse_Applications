@@ -1,5 +1,4 @@
 import json
-import re
 
 dictionary_data = json.load(open('resources/dictionary.json'))
 
