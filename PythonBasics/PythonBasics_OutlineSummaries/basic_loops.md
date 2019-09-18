@@ -15,5 +15,5 @@ for key, value in phone_numbers.items():
     print(key, value)
 </pre><ul><li>Output:&#xA0;</li><li><code>(&apos;John Smith&apos;, &apos;+37682929928&apos;)</code></li><li><code>(&apos;Marry Simpons&apos;, &apos;+423998200919&apos;)</code></li></ul><p><br></p><ul><li><strong>While loops</strong>will run as long as a condition is true:</li></ul><pre class="ql-syntax" spellcheck="false">while datetime.datetime.now() &lt; datetime.datetime(2090, 8, 20, 19, 30, 20):
     print(&quot;It&apos;s not yet 19:30:20 of 2090.8.20&quot;)
-</pre><ul><li>The loop above will print out the string inside print() over and over again until the 20th of August, 2090.</li></ul><p><br></p></p>
+</pre><ul><li>The loop above will print out the string inside print() over and over again until the 20th of August, 2090.</li></ul><p><br></p>
 </div>

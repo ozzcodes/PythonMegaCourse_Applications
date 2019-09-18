@@ -7,7 +7,7 @@ choose_yes = ['yes', 'y']
 choose_no = ['no', 'n']
 
 
-def dictionary_app(get_word):
+def dictionary_app(get_word: str):
     if get_word in dictionary_data:
         return dictionary_data[get_word]
     elif get_word not in dictionary_data:
@@ -18,7 +18,7 @@ def dictionary_app(get_word):
 
             if resp in choose_yes:
                 input('Please Enter a word: (Check your spelling)')
-                return dictionary_data[revised_input]
+                return dictionary_data[new_input]
             elif resp in choose_no:
                 # exit loop
                 print('Thank you for using the Python Dictionary Program!')
@@ -35,7 +35,7 @@ revised_input = input('Please Enter a word: (Check your spelling)')
 new_input = revised_input.lower().strip()
 
 
-if user_input in dictionary_app(get_word=True):
+if user_input in dictionary_app(user_input):
     print(dictionary_app(user_input))
 else:
-    print(dictionary_app(revised_input))
+    print(dictionary_app(new_input))
