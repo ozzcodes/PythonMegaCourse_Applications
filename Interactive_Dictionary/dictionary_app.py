@@ -16,15 +16,15 @@ def dictionary_app(get_word):
             if new_word == dictionary_data[new_word]:
                 return dictionary_data[revised_input]
 
-        if resp in choose_yes:
-            input('Please Enter a word: (Check your spelling)')
-            return dictionary_data[revised_input]
-        elif resp in choose_no:
-            # exit loop
-            print('Thank you for using the Python Dictionary Program!')
-            exit(0)
-        else:
-            pass
+            if resp in choose_yes:
+                input('Please Enter a word: (Check your spelling)')
+                return dictionary_data[revised_input]
+            elif resp in choose_no:
+                # exit loop
+                print('Thank you for using the Python Dictionary Program!')
+                exit(0)
+            else:
+                pass
     else:
         "Thank you for using the Dictionary Program!"
 
@@ -34,4 +34,8 @@ user_input = get_input.lower().strip()
 revised_input = input('Please Enter a word: (Check your spelling)')
 new_input = revised_input.lower().strip()
 
-print(dictionary_app(user_input or revised_input))
+
+if user_input in dictionary_app(get_word=True):
+    print(dictionary_app(user_input))
+else:
+    print(dictionary_app(revised_input))
