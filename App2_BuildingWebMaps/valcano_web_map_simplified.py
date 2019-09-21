@@ -11,14 +11,17 @@ import pandas as pd
 
 # Read the datafile with all volcano locations in the US
 data = pd.read_csv('data_files/Volcanoes-USA.txt')
-my_map = folium.Map(location=[45.372, -121.697], zoom_start=5, tiles='Stamen Terrain')
+my_map = folium.Map(location=[data['LAT'].mean(), data['LON'].mean()], zoom_start=5, tiles='Stamen Terrain')
 
 
 # Create a function for coloring the marker's by a volcanoes elevation
 def marker_color(elev):
-    if elev in range(0, 1000):
+    minimum = int(min(data['ELEV']))
+    step_value = int((max(data['ELEV']) - min(data['ELEV'])) / 3)
+
+    if elev in range(minimum, minimum + step_value):
         color = 'green'
-    elif elev in range(1001, 3000):
+    elif elev in range(minimum, minimum + step_value * 2):
         color = 'orange'
     else:
         color = 'red'
