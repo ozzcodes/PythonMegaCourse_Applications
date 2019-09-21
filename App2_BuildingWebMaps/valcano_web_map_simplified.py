@@ -1,14 +1,6 @@
 import folium
 import pandas as pd
 
-# Add data points using specific longitude and latitude locations
-# data = pd.DataFrame({
-#     'lon': [45.3288, 45.3311, 59.93, 5.33, 45.52, -1.29, -12.97],
-#     'lat': [-121.6625, -121.7311, 30.32, -4.03, -73.57, 36.82, -38.5],
-#     'name': ['Mt. Hood Meadow', 'Timberlake Lodge', 'St Petersbourg', 'Abidjan', 'Montreal',
-#              'Nairobi', 'Salvador'],
-# })
-
 # Read the datafile with all volcano locations in the US
 data = pd.read_csv('data_files/Volcanoes-USA.txt')
 my_map = folium.Map(location=[data['LAT'].mean(), data['LON'].mean()], zoom_start=5, tiles='Stamen Terrain')
