@@ -5,8 +5,15 @@
       <excludeFolder url="file://$MODULE_DIR$/Lib" />
       <excludeFolder url="file://$MODULE_DIR$/Scripts" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.7 (PythonMegaCourse_Applications)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (appsvenv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="leaflet" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="leaflet.awesome-markers" level="application" />
+    <orderEntry type="library" name="leaflet.markercluster-src" level="application" />
+    <orderEntry type="library" name="leaflet.markercluster" level="application" />
+    <orderEntry type="library" name="jquery-1.12.4" level="application" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="renderExternalDocumentation" value="true" />
