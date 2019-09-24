@@ -38,6 +38,6 @@ geojson_layer = my_map.add_child(
 layer_controller = my_map.add_child(folium.LayerControl(position='topright', collapsed=True))
 
 # Save the folium map to a directory as an html file
-my_map.save(outfile='data_files/us_map.html')
+my_map.save(outfile='output_files/west-coast_map.html')
 
 print('Creating a webmap for Volcanoes in the US...')
