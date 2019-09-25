@@ -3,7 +3,8 @@ from datetime import datetime as dt
 
 host_path = r"C:\Windows\System32\drivers\etc\hosts"
 redirect = '127.0.0.1'
-block_list = ['www.facebook.com', 'facebook.com', 'www.twitter.com', 'www.instagram.com']
+block_list = ['www.facebook.com', 'facebook.com', 'www.twitter.com',
+              'www.instagram.com', 'www.amazon.com', 'www.ebay.com']
 final_list = [redirect + " " + i for i in block_list]
 final_string_block = '\n'.join(final_list)
 
