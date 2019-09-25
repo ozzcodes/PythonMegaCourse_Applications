@@ -221,3 +221,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+Include/
+Scripts/chardetect.exe
