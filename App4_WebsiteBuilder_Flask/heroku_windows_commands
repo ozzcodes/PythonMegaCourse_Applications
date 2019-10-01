@@ -1,4 +1,5 @@
 heroku login -> Used to login to your heroku account
 heroku create [name application]
 create a Procfile for heroku to run with gunicorn
-create a runtime.txt file
+create a runtime.txt file (declaring the python version to be run on heroku)
+heroku open --> Runs the application on the heroku server as a live environment
