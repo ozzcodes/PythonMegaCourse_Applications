@@ -1,0 +1,4 @@
+heroku login -> Used to login to your heroku account
+heroku create [name application]
+create a Procfile for heroku to run with gunicorn
+create a runtime.txt file
