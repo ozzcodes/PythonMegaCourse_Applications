@@ -223,3 +223,9 @@ $RECYCLE.BIN/
 
 Include/
 Scripts/chardetect.exe
+Scripts/iptest.exe
+Scripts/iptest3.exe
+Scripts/ipython.exe
+Scripts/ipython3.exe
+Scripts/pygmentize.exe
+share/
