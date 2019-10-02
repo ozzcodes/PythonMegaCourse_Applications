@@ -229,3 +229,4 @@ Scripts/ipython.exe
 Scripts/ipython3.exe
 Scripts/pygmentize.exe
 share/
+!/share/
