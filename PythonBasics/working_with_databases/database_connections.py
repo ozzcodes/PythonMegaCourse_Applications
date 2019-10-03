@@ -1,6 +1,7 @@
 import sqlite3
 
 
+# First create a table with rows
 def create_table():
     # Create a connection
     conn = sqlite3.connect('db.sqlite')
@@ -58,9 +59,20 @@ def update(quantity, price, item):
     conn.close()
 
 
+def remove_duplicates():
+    conn = sqlite3.connect('db.sqlite')
+    curs = conn.cursor()
+    curs.execute("DELETE FROM Mystore WHERE item NOT IN (SELECT min(item) FROM Mystore GROUP BY item, quantity)")
+
+
 # Delete an item
 delete('Wine Glass')
+
 # Update an item
 update(12, 18, 'Waterbottle')
+
+# Select non-duplicated items
+remove_duplicates()
+
 # Print a view of the data in a list format
 print(view())
