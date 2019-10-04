@@ -1,5 +1,10 @@
 import psycopg2
 
+'''
+Postgres4 Credentials are in text file;
+Needed for connecting to db!
+'''
+
 
 # First create a table with rows
 def create_table():
