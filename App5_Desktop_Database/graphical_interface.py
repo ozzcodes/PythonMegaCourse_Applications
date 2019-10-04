@@ -14,7 +14,7 @@ Close the program
 """
 
 from tkinter import *
-from backend_data import db_connect
+from App5_Desktop_Database import backend_data
 
 # Create the initial window
 window = Tk()
@@ -61,7 +61,8 @@ scroll1.configure(command=data_view.yview)
 # Create buttons for user interaction
 button1 = Button(window, text='View All', width=14)
 button1.grid(row=2, column=3)
-button2 = Button(window, text='Search Entry', width=14)
+button2 = Button(window, text='Search Entry', width=14,
+                 command=backend_data.search(title='', author='', year='', isbn=''))
 button2.grid(row=3, column=3)
 button3 = Button(window, text='Add Entry', width=14)
 button3.grid(row=4, column=3)
@@ -71,6 +72,7 @@ button5 = Button(window, text='Delete Selected', width=14)
 button5.grid(row=6, column=3)
 button6 = Button(window, text='Close', width=14)
 button6.grid(row=7, column=3)
+
 
 # Loop through the application until close button if pressed
 window.mainloop()

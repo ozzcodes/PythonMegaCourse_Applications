@@ -27,6 +27,26 @@ def insert(title, author, year, isbn):
     conn.close()
 
 
+# Create function to delete data
+def delete(title, author, year, isbn):
+    conn = sqlite3.connect('books.sqlite')
+    curs = conn.cursor()
+    curs.execute("DELETE FROM bookstore WHERE title=? OR author=? OR year=? OR isbn=?", (title, author, year, isbn))
+    conn.commit()
+    conn.close()
+
+
+# Allow user's to update an entry
+def update(title, author, year, isbn):
+    conn = sqlite3.connect('db.sqlite')
+    curs = conn.cursor()
+    # Update an item
+    curs.execute("UPDATE bookstore SET author=?, year=?, isbn=? WHERE title=?",
+                 (author, year, isbn, title))  # Need a comma for SQLite after parameter
+    conn.commit()
+    conn.close()
+
+
 # Create a view function
 def view():
     conn = sqlite3.connect('books.sqlite')
@@ -47,6 +67,11 @@ def search(title, author, year, isbn):
     conn.close()
 
     return rows
+
+
+# Close the program
+def close():
+    return -1
 
 
 db_connect()
