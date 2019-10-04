@@ -3,3 +3,4 @@ geopy
 flask
 pandas
 numpy
+psycopg2
