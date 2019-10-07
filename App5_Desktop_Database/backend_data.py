@@ -69,11 +69,6 @@ def search(title='', author='', year='', isbn=''):
     return rows
 
 
-# Close the program
-def close():
-    return -1
-
-
 # Make connection to database
 db_connect()
 
@@ -84,6 +79,6 @@ Test out the functions for correctness
 # insert('A Random Book', 'Random Dude', 2018, isbn=isbn_generator())
 # delete(3)
 # update(2, 'Island in the Stream', 'Ernest Hemingway', 1970, isbn=isbn_generator())
-print(view())
-print('\n')
-print(search(author='Ernest Hemingway'))
+# print(view())
+# print('\n')
+# print(search(author='Ernest Hemingway'))
