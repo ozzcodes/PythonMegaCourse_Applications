@@ -6,7 +6,7 @@ class Account:
         # Create local variable to access file path for later use
         self.path = filepath
         with open(filepath, 'r') as file:
-            self.balance = int(file.read())
+            self.balance = float(file.read())
 
     # Create another function for use in class
     def withdraw(self, amount):
@@ -24,9 +24,36 @@ class Account:
 
 my_account = Account('balance.txt')
 
-my_account.withdraw(900)
-print(my_account.balance)
-my_account.update_balance()
-print(my_account.balance)
-my_account.deposit(1250)
-print(my_account.balance)
+'''
+Examples to use the bank account with Account class
+'''
+
+
+# my_account.withdraw(900)
+# print(my_account.balance)
+# my_account.update_balance()
+# print(my_account.balance)
+# my_account.deposit(1250)
+# print(my_account.balance)
+
+
+# Create a Second, sub-class using INHERITANCE
+class Checking(Account):
+
+    def __init__(self, filepath, fee):
+        Account.__init__(self, filepath)
+        self.fee = fee
+
+    # Create a transfer function
+    def transfer(self, amount):
+        self.balance = self.balance - amount - self.fee
+
+
+checking = Checking('balance.txt', 3.50)
+
+# Example of use
+checking.deposit(120.68)
+print(checking.balance)
+checking.transfer(355.87)
+print(checking.balance)
+checking.update_balance()
