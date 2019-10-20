@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread('tarot680.jpg', 0)
+img = cv2.imread('resource_files/tarot680.jpg', 0)
 
 # Print the type of image
 print(type(img))
