@@ -51,7 +51,10 @@ class Checking(Account):
 
 checking = Checking('balance.txt', 3.50)
 
-# Example of use
+'''
+Examples to use the bank account with Account class
+'''
+
 checking.deposit(120.68)
 print(checking.balance)
 checking.transfer(355.87)
