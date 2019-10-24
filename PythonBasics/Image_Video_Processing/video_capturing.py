@@ -5,7 +5,10 @@ import time
 # First camera, specify index if multiple camera's
 my_video = cv2.VideoCapture(0)
 
+a = 0
+
 while True:
+    a += 1
     # Print a frame, after checking it's active
     check, frame = my_video.read()
     print(check)
@@ -25,5 +28,6 @@ while True:
     if key == ord('q'):
         break
 
+print(a)
 my_video.release()
 cv2.destroyAllWindows()
