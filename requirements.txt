@@ -1,3 +1,5 @@
+imutils
+bokeh
 opencv-python
 folium
 geopy
