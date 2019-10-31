@@ -49,7 +49,7 @@ while True:
         (_, cnts, _) = cv2.findContours(threshold_frame.copy(), cv2.RETR_EXTERNAL,
                                         cv2.CHAIN_APPROX_SIMPLE)
     for contour in cnts:
-        if cv2.contourArea(contour) < 15000:
+        if cv2.contourArea(contour) < 10000:
             continue
         (x, y, w, h) = cv2.boundingRect(contour)
         rect = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 3)
