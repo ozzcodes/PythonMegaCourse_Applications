@@ -11,7 +11,7 @@ print("OpenCV Version: {}".format(cv2.__version__))
 init_frame = None
 
 # Create a status list
-status_list = []
+status_list = [None, None]
 times = []
 df = pd.DataFrame(columns=["Start", "End"])
 
@@ -34,13 +34,12 @@ while True:
     delta_frame = cv2.absdiff(init_frame, gray_scale)
 
     # Use a new frame named threshold
-    threshold_frame = cv2.threshold(delta_frame, 30, 255, cv2.THRESH_BINARY_INV)[1]
+    threshold_frame = cv2.threshold(delta_frame, 30, 255, cv2.THRESH_BINARY)[1]
 
     # Change threshold frame to be delayed, iterate twice
     threshold_frame = cv2.dilate(threshold_frame, None, iterations=2)
 
     # check to see if we are using OpenCV 2.X or OpenCV 4
-
     if imutils.is_cv2() or imutils.is_cv4():
         (cnts, _) = cv2.findContours(threshold_frame.copy(), cv2.RETR_EXTERNAL,
                                      cv2.CHAIN_APPROX_SIMPLE)
