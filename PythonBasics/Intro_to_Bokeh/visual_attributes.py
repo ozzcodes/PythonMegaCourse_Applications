@@ -18,6 +18,12 @@ p.border_fill_color = '#c3c3c3'
 p.line([1, 2, 3, 4, 5], [5, 6, 5, 5, 3], line_width=2, color="red", alpha=0.5)
 p.circle([1, 2, 3, 4, 5], [5, 6, 5, 5, 3], size=[i * 2 for i in [8, 12, 14, 15, 20]], color="purple", alpha=0.5)
 
+# Create random rectangle bars with quadrant style plots
+p.quad(top=[2, 3, 4], bottom=[1, 2, 3], left=[1, 2, 3],
+       right=[1.2, 2.5, 3.7], color="#B3DE69")
+
+show(p)
+
 # Save the file
 output_file("resources/visual_scatterplot2.html")
 

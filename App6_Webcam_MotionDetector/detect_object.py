@@ -32,10 +32,8 @@ while True:
 
     # Use the blur frame
     delta_frame = cv2.absdiff(init_frame, gray_scale)
-
     # Use a new frame named threshold
     threshold_frame = cv2.threshold(delta_frame, 30, 255, cv2.THRESH_BINARY)[1]
-
     # Change threshold frame to be delayed, iterate twice
     threshold_frame = cv2.dilate(threshold_frame, None, iterations=2)
 
@@ -56,11 +54,12 @@ while True:
     # Append a new Status List
     status_list.append(status)
 
+    # Only obtain the last two status list values
     status_list = status_list[-2:]
 
-    if status_list[-1] == 1 and status_list[-2:] == 0:
+    if status_list[-1] == 1 and status_list[-2] == 0:
         times.append(datetime.now())
-    if status_list[-1] == 0 and status_list[-2:] == 1:
+    if status_list[-1] == 0 and status_list[-2] == 1:
         times.append(datetime.now())
 
     cv2.imshow('Capturing images', gray_scale)
