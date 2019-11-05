@@ -14,7 +14,12 @@ web_data = bsoup.find_all("div", {
 #     "class": "propPrice"
 # }).text.replace("\n", "").replace(" ", ""))
 
+# Iterate through webpage, grabbing (in this set) 8 items
 for item in web_data:
+
+    # Define the dictionary variable
+    data = {}
+    
     print(item.find("h4", {
         "class", "propPrice"
     }).text.replace("\n", "").replace(" ", ""))
