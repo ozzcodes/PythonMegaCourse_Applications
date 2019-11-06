@@ -14,44 +14,43 @@ web_data = bsoup.find_all("div", {
 #     "class": "propPrice"
 # }).text.replace("\n", "").replace(" ", ""))
 
-# Iterate through webpage, grabbing (in this set) 8 items
-for item in web_data:
+# Replace print statements with a dictionary variable
+d = {}
 
-    # Define the dictionary variable
-    data = {}
-    
-    print(item.find("h4", {
+# A loop for pulling 8 different fields from a webpage
+for item in web_data:
+    d["Area"] = item.find("h4", {
         "class", "propPrice"
-    }).text.replace("\n", "").replace(" ", ""))
-    print(item.find_all("span", {
-        "class", "propAddressCollapse"})[0].text)
-    print(item.find_all("span", {
+    }).text.replace("\n", "").replace(" ", "")
+    d["Locality"] = item.find_all("span", {
+        "class", "propAddressCollapse"})[0].text
+    d["Price"] = item.find_all("span", {
         "class", "propAddressCollapse"
-    })[1].text)
+    })[1].text
     try:
-        print(item.find("span", {
+        d["Beds"] = item.find("span", {
             "class", "infoBed"
-        }).find("b").text)
+        }).find("b").text
     except:
-        print(None)
+        d["Beds"] = None
     try:
-        print(item.find("span", {
+        d["Area"] = item.find("span", {
             "class", "infoSqFt"
-        }).find("b").text)
+        }).find("b").text
     except:
-        print(None)
+        d["Area"] = None
     try:
-        print(item.find("span", {
+        d["Full-baths"] = item.find("span", {
             "class", "infoValueFullBath"
-        }).find("b").text)
+        }).find("b").text
     except:
-        print(None)
+        d["Full-baths"] = None
     try:
-        print(item.find("span", {
+        d["Half-baths"] = item.find("span", {
             "class", "infoValueHalfBath"
-        }).find("b").text)
+        }).find("b").text
     except:
-        print(None)
+        d["Half-baths"] = None
 
     for column_group in item.find_all("div", {
         "class": "columnGroup"
