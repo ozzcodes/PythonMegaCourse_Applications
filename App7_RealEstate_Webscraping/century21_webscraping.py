@@ -1,5 +1,8 @@
 import urllib.request
+from typing import Optional, Dict, List, Any
+
 from bs4 import BeautifulSoup
+import pandas as pd
 
 req = urllib.request.urlopen('http://www.pythonhow.com/real-estate/rock-springs-wy/LCWYROCKSPRINGS/')
 cont = req.read()
@@ -14,11 +17,14 @@ web_data = bsoup.find_all("div", {
 #     "class": "propPrice"
 # }).text.replace("\n", "").replace(" ", ""))
 
+
+# Create an empty list to store information
+my_list = []
 # Replace print statements with a dictionary variable
-d = {}
 
 # A loop for pulling 8 different fields from a webpage
 for item in web_data:
+    d = {}
     d["Area"] = item.find("h4", {
         "class", "propPrice"
     }).text.replace("\n", "").replace(" ", "")
@@ -62,5 +68,11 @@ for item in web_data:
             "class": "featureName"
         })):
             if "Lot Size" in feature_group.text:
-                print(feature_name.text)
-    print(" ")
+                d["Lot Size"] = feature_name.text
+    my_list.append(d)
+
+    df = pd.DataFrame(my_list)
+    print(df)
+
+    # Print dataframe to CSV file
+    df.to_csv('saved_data/real-estate_output.csv')
