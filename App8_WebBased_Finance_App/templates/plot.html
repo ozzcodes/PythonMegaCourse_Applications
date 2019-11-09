@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+<link rel="stylesheet" href={{cdn_css | safe}} type="text/css" />
+<script type="text/javascript" src={{cdn_js | safe}}></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Plot</title>
+</head>
+<div class="plot">
+    <h1>Financial Analysis Plot</h1>
+    <p>I am testing web application, for financial analysis</p>
+</div>
+    {{ flask_scipt | safe }}
+    {{ div1 | safe }}
+{% endblock %}

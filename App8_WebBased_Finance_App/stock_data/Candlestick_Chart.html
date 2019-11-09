@@ -1,84 +1,1005 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-  
-  <head>
-    
-      <meta charset="utf-8">
-      <title>Bokeh Plot</title>
-      
-      
-        
-          
-        
-        
-          
-        <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
-        <script type="text/javascript">
-            Bokeh.set_log_level("info");
-        </script>
-        
-      
-      
-    
-  </head>
-  
-  
-  <body>
-    
-      
-        
-          
-          
-            
-              <div class="bk-root" id="705b1f87-3bb5-4939-a101-68c15ae0615c" data-root-id="1001"></div>
-            
-          
-        
-      
-      
-        <script type="application/json" id="1266">
-          {"b730b719-b5ce-4673-97d3-664f0c1cad7c":{"roots":{"references":[{"attributes":{"months":[0,1,2,3,4,5,6,7,8,9,10,11]},"id":"1063","type":"MonthsTicker"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"height":{"field":"height","units":"data"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"width":{"units":"data","value":86400000},"x":{"field":"x"},"y":{"field":"y"}},"id":"1042","type":"Rect"},{"attributes":{"fill_alpha":{"value":0.1},"fill_color":{"value":"#1f77b4"},"height":{"field":"height","units":"data"},"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"width":{"units":"data","value":86400000},"x":{"field":"x"},"y":{"field":"y"}},"id":"1047","type":"Rect"},{"attributes":{"line_alpha":{"value":0.1},"line_color":{"value":"#1f77b4"},"x0":{"field":"x0"},"x1":{"field":"x1"},"y0":{"field":"y0"},"y1":{"field":"y1"}},"id":"1037","type":"Segment"},{"attributes":{"months":[0,2,4,6,8,10]},"id":"1064","type":"MonthsTicker"},{"attributes":{"data_source":{"id":"1045","type":"ColumnDataSource"},"glyph":{"id":"1046","type":"Rect"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1047","type":"Rect"},"selection_glyph":null,"view":{"id":"1049","type":"CDSView"}},"id":"1048","type":"GlyphRenderer"},{"attributes":{"fill_color":{"value":"green"},"height":{"field":"height","units":"data"},"width":{"units":"data","value":86400000},"x":{"field":"x"},"y":{"field":"y"}},"id":"1041","type":"Rect"},{"attributes":{"months":[0,4,8]},"id":"1065","type":"MonthsTicker"},{"attributes":{"source":{"id":"1045","type":"ColumnDataSource"}},"id":"1049","type":"CDSView"},{"attributes":{"callback":null,"data":{"height":{"__ndarray__":"AAAAACxcE0AAAAAAULj2PwAAAADgeiNAAAAAANDMAEAAAAAAAHyUPwAAAACAcM0/AAAAAAAAFEAAAAAAYI/yPwAAAAAq3CVAAAAAAOR6GUAAAAAAZmYiQAAAAAAAAARAAAAAAMD14D8AAAAA9CgaQAAAAABQuABAAAAAAAAA4D8AAAAA6FEAQAAAAABIYStAAAAAAAjXD0AAAAAAQAoLQAAAAAAghRJAAAAAANCj8D8AAAAA8FEIQAAAAAAoXBFAAAAAAMT1EUAAAAAAIIX3PwAAAADgzOw/AAAAAIDr6T8AAAAAACn4PwAAAABgjwhAAAAAAFC4EkAAAAAAcD32PwAAAACYmSFAAAAAAOB69D8AAAAAgBTyPwAAAADgo/A/AAAAABDXD0AAAAAAFi4nQAAAAABI4RRAAAAAAPAo/D8AAAAAQOHyPwAAAADgzOQ/AAAAANgjIUAAAAAAYI/6PwAAAADoUQxAAAAAAAzXGEAAAAAAsEf9PwAAAAAAKfw/AAAAACCFCUAAAAAA8Cj4PwAAAADkehdAAAAAAFxPMkAAAAAAAOuxPwAAAABACgFAAAAAAIB6xD8AAAAAgArHPwAAAACgR+E/AAAAAMD14D8AAAAAAAAOQAAAAADoURNAAAAAAPAoDkAAAAAAgBQIQA==","dtype":"float64","shape":[62]},"x":{"__ndarray__":"AADADQundkIAAIBzXad2QgAAQHD5qHZCAAAA1kupdkIAAMA7nql2QgAAgKHwqXZCAADA0ueqdkIAAAAE36t2QgAAwGkxrHZCAACAZs2tdkIAAAAycq52QgAAAMm7r3ZCAACAlGCwdkIAAIArqrF2QgAAAPdOsnZCAACAwvOydkIAAIBZPbR2QgAAQL+PtHZCAADAIX62dkIAAEDtIrd2QgAAAOq+uHZCAADATxG5dkIAAIBMrbp2QgAAQLL/unZCAAAAGFK7dkIAAIDj9rt2QgAAwBTuvHZCAACAqNO/dkIAAEAOJsB2QgAAQKVvwXZCAACA1mbCdkIAAAA5VcR2QgAAwJ6nxHZCAADANfHFdkIAAICbQ8Z2QgAAwMw6x3ZCAAAA/jHIdkIAAIDJ1sh2QgAAQC8pyXZCAAAALMXKdkIAAMCRF8t2QgAAgPdpy3ZCAABAXbzLdkIAAED0Bc12QgAAgCX9zXZCAABAIpnPdkIAAEBQLNJ2QgAAALZ+0nZCAABA53XTdkIAAMCyGtR2QgAAQH6/1HZCAABAFQnWdkIAAIBGANd2QgAAwHf313ZCAABAQ5zYdkIAAMAOQdl2QgAAQHEv23ZCAACAOXDddkIAAECfwt12QgAAgNC53nZCAACA/kzhdkIAAMAvROJ2Qg==","dtype":"float64","shape":[62]},"y":{"__ndarray__":"AAAAkMKNbUAAAACQ65luQAAAAIDCfW9AAAAA4Hq8bkAAAAAQrj9uQAAAAPBR9G1AAAAA4FGwbEAAAADAHp1sQAAAABDXD2tAAAAAsEd9aEAAAAAwXGdoQAAAAGBmvmdAAAAAIIWPZ0AAAAAQrsdmQAAAAOBRtGhAAAAAAACYaUAAAAAQ10NrQAAAACBcA2tAAAAAMFxXbEAAAACA66lrQAAAAGBmwmtAAAAAsEd5a0AAAACAFJZsQAAAAEAKV2xAAAAA0KOkbUAAAABguDptQAAAALBH2WxAAAAA4Hrob0AAAACgcMlvQAAAAKBwE3BAAAAAwB7lbEAAAACQwkluQAAAAAAAyG1AAAAAYLiebEAAAACAFOpsQAAAAMD1cG1AAAAAAADgbEAAAACwRy1sQAAAAAAASGtAAAAAEK5XbEAAAACgcK1rQAAAADAzz2tAAAAAgOv1akAAAADAHt1qQAAAAPAobGxAAAAAsB75a0AAAACwHtluQAAAAGCPwm5AAAAAwPWMbkAAAAAQ14duQAAAAJDCcW5AAAAAIK4LbUAAAACwR0VuQAAAAIDrPW5AAAAAULhmbkAAAADQo/BsQAAAAPBRoG5AAAAAkMJjcEAAAABAMy1wQAAAAKBH/W9AAAAAEK7hc0AAAABACq1zQA==","dtype":"float64","shape":[62]}},"selected":{"id":"1073","type":"Selection"},"selection_policy":{"id":"1072","type":"UnionRenderers"}},"id":"1045","type":"ColumnDataSource"},{"attributes":{"source":{"id":"1040","type":"ColumnDataSource"}},"id":"1044","type":"CDSView"},{"attributes":{"months":[0,6]},"id":"1066","type":"MonthsTicker"},{"attributes":{"callback":null},"id":"1004","type":"DataRange1d"},{"attributes":{},"id":"1067","type":"YearsTicker"},{"attributes":{"below":[{"id":"1012","type":"DatetimeAxis"}],"center":[{"id":"1016","type":"Grid"},{"id":"1021","type":"Grid"}],"left":[{"id":"1017","type":"LinearAxis"}],"plot_height":400,"plot_width":1000,"renderers":[{"id":"1038","type":"GlyphRenderer"},{"id":"1043","type":"GlyphRenderer"},{"id":"1048","type":"GlyphRenderer"}],"title":{"id":"1002","type":"Title"},"toolbar":{"id":"1028","type":"Toolbar"},"x_range":{"id":"1004","type":"DataRange1d"},"x_scale":{"id":"1008","type":"LinearScale"},"y_range":{"id":"1006","type":"DataRange1d"},"y_scale":{"id":"1010","type":"LinearScale"}},"id":"1001","subtype":"Figure","type":"Plot"},{"attributes":{},"id":"1008","type":"LinearScale"},{"attributes":{},"id":"1068","type":"UnionRenderers"},{"attributes":{},"id":"1018","type":"BasicTicker"},{"attributes":{},"id":"1010","type":"LinearScale"},{"attributes":{"days":[1,15]},"id":"1062","type":"DaysTicker"},{"attributes":{},"id":"1069","type":"Selection"},{"attributes":{"callback":null,"data":{"height":{"__ndarray__":"AAAAAApXJkAAAAAArEcVQAAAAAB4FAhAAAAAADgKBUAAAAAA4HoEQAAAAACwRx1AAAAAAHBm8j8AAAAAeBQGQAAAAAAAuK4/AAAAAAAAKUAAAAAA8Cj4PwAAAABACgVAAAAAAHA9DEAAAAAAKFwNQAAAAACaGSNAAAAAALAe9T8AAAAAXI8WQAAAAACAmdk/AAAAALgeC0AAAAAAkMIDQAAAAACgcPE/AAAAAHwUE0AAAAAAwHDdPwAAAADsURVAAAAAAAAAFkAAAAAA2KMIQAAAAACA6wNAAAAAACCuC0AAAAAACNcWQAAAAACA6/E/AAAAACpcIUAAAAAAUrgiQAAAAACA6wdAAAAAABSuG0AAAAAA0MwOQAAAAACQwhhAAAAAAHA9CkAAAAAAwPUEQAAAAABgZvY/AAAAAGBm/j8AAAAAGK4FQAAAAACAwu0/AAAAAOxRHEAAAAAAAADQPwAAAADQo/w/AAAAAMD1EkAAAAAApHAjQAAAAABYjwJAAAAAAEAz4z8AAAAAEK7zPwAAAABcjxBAAAAAAMzMJ0AAAAAAIIUJQAAAAABQuPI/AAAAABSuH0AAAAAAVLgQQAAAAAAQrglAAAAAACCu5z8AAAAAuB4iQAAAAAAAUsg/AAAAAEDhAkAAAAAA8Cj0PwAAAAAACsc/AAAAAMD19D8AAAAA9mg+QAAAAAAAwsU/AAAAAIAUAEAAAAAAwB79Pw==","dtype":"float64","shape":[68]},"x":{"__ndarray__":"AABA2a+ndkIAAIAKp6h2QgAAgDg6q3ZCAABAnoyrdkIAAACbKK12QgAAwAB7rXZCAABAzB+udkIAAMAuDrB2QgAAQPqysHZCAABAkfyxdkIAAMBcobJ2QgAAwPPqs3ZCAAAAJeK0dkIAAMCKNLV2QgAAALwrtnZCAACAh9C2dkIAAABTdbd2QgAAQIRsuHZCAACAtWO5dkIAAEAbtrl2QgAAgHpAvXZCAABA4JK9dkIAAABG5b12QgAAwKs3vnZCAAAA3S6/dkIAAMBCgb92QgAAAHR4wHZCAAAAC8LBdkIAAMBwFMJ2QgAAQDy5wnZCAACAbbDDdkIAAEDTAsR2QgAAgAT6xHZCAABAAZbGdkIAAABn6MZ2QgAAwGOEyHZCAAAAlXvJdkIAAEDGcsp2QgAAgI6zzHZCAAAAWljNdkIAAMC/qs12QgAAgLxGz3ZCAAAAiOvPdkIAAMDtPdB2QgAAAB810XZCAADAhIfRdkIAAIDq2dF2QgAAAE3I03ZCAACAGG3UdkIAAICvttV2QgAAAHtb1nZCAADA4K3WdkIAAIDdSdh2QgAAAKnu2HZCAAAAQDjadkIAAMClitp2QgAAgAvd2nZCAAAA14HbdkIAAEAIedx2QgAAAG7L3HZCAADA0x3ddkIAAEA2DN92QgAAAJxe33ZCAADAAbHfdkIAAIBnA+B2QgAAwJj64HZCAABAZJ/hdkIAAADK8eF2Qg==","dtype":"float64","shape":[68]},"y":{"__ndarray__":"AAAAcD0ub0AAAACQwpVvQAAAAJDC2WxAAAAA8FHUbEAAAABgj4JpQAAAAKBwLWlAAAAAsEddaEAAAAAwXI9nQAAAAAApJGdAAAAAQDNrZ0AAAABwPaZpQAAAAIAUcmpAAAAA4KOEakAAAABQuKJqQAAAAPAoiGtAAAAA0KM4bEAAAACwR2FrQAAAAIAU7mtAAAAA0KOka0AAAABAM8drQAAAAOB6sGxAAAAAsB6RbUAAAAAQ18ttQAAAALBHTW5AAAAAAABYb0AAAABQ4VpvQAAAAMD1DnBAAAAAQAoncEAAAABwZmBwQAAAACBcb2xAAAAAkMLtbEAAAABQj7JtQAAAAEAKG21AAAAAULi+bEAAAAAAAIxtQAAAAMD1/GxAAAAAoJlJa0AAAADgozBsQAAAAKCZyWpAAAAA4HrUakAAAAAwXItrQAAAAKBwEWxAAAAAsEdBbEAAAABgZmpsQAAAANCj3GxAAAAAoHAlbUAAAAAgrkduQAAAAPAodG5AAAAAoJnJbkAAAAAQrhNuQAAAAPAoVGxAAAAAIIWTbUAAAABACmNuQAAAAHA9Dm1AAAAA8FE4bUAAAABQuL5tQAAAAKCZXW5AAAAA0KPwbkAAAACAwo1vQAAAAGC4HHBAAAAAwB4pcEAAAABwZt5vQAAAAEDh0m9AAAAAYGawckAAAADQzI5zQAAAAAAAenRAAAAAgBSgc0AAAAAAKaBzQA==","dtype":"float64","shape":[68]}},"selected":{"id":"1071","type":"Selection"},"selection_policy":{"id":"1070","type":"UnionRenderers"}},"id":"1040","type":"ColumnDataSource"},{"attributes":{},"id":"1023","type":"WheelZoomTool"},{"attributes":{},"id":"1071","type":"Selection"},{"attributes":{},"id":"1051","type":"BasicTickFormatter"},{"attributes":{},"id":"1072","type":"UnionRenderers"},{"attributes":{},"id":"1053","type":"DatetimeTickFormatter"},{"attributes":{"data_source":{"id":"1040","type":"ColumnDataSource"},"glyph":{"id":"1041","type":"Rect"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1042","type":"Rect"},"selection_glyph":null,"view":{"id":"1044","type":"CDSView"}},"id":"1043","type":"GlyphRenderer"},{"attributes":{"source":{"id":"1035","type":"ColumnDataSource"}},"id":"1039","type":"CDSView"},{"attributes":{},"id":"1073","type":"Selection"},{"attributes":{"bottom_units":"screen","fill_alpha":{"value":0.5},"fill_color":{"value":"lightgrey"},"left_units":"screen","level":"overlay","line_alpha":{"value":1.0},"line_color":{"value":"black"},"line_dash":[4,4],"line_width":{"value":2},"render_mode":"css","right_units":"screen","top_units":"screen"},"id":"1055","type":"BoxAnnotation"},{"attributes":{"data_source":{"id":"1035","type":"ColumnDataSource"},"glyph":{"id":"1036","type":"Segment"},"hover_glyph":null,"muted_glyph":null,"nonselection_glyph":{"id":"1037","type":"Segment"},"selection_glyph":null,"view":{"id":"1039","type":"CDSView"}},"id":"1038","type":"GlyphRenderer"},{"attributes":{},"id":"1022","type":"PanTool"},{"attributes":{"x0":{"field":"x0"},"x1":{"field":"x1"},"y0":{"field":"y0"},"y1":{"field":"y1"}},"id":"1036","type":"Segment"},{"attributes":{"mantissas":[1,2,5],"max_interval":500.0,"num_minor_ticks":0},"id":"1056","type":"AdaptiveTicker"},{"attributes":{"active_drag":"auto","active_inspect":"auto","active_multi":null,"active_scroll":"auto","active_tap":"auto","tools":[{"id":"1022","type":"PanTool"},{"id":"1023","type":"WheelZoomTool"},{"id":"1024","type":"BoxZoomTool"},{"id":"1025","type":"SaveTool"},{"id":"1026","type":"ResetTool"},{"id":"1027","type":"HelpTool"}]},"id":"1028","type":"Toolbar"},{"attributes":{"callback":null},"id":"1006","type":"DataRange1d"},{"attributes":{"text":"Candlestick Chart"},"id":"1002","type":"Title"},{"attributes":{"formatter":{"id":"1051","type":"BasicTickFormatter"},"ticker":{"id":"1018","type":"BasicTicker"}},"id":"1017","type":"LinearAxis"},{"attributes":{"base":60,"mantissas":[1,2,5,10,15,20,30],"max_interval":1800000.0,"min_interval":1000.0,"num_minor_ticks":0},"id":"1057","type":"AdaptiveTicker"},{"attributes":{"grid_line_alpha":0.3,"ticker":{"id":"1013","type":"DatetimeTicker"}},"id":"1016","type":"Grid"},{"attributes":{},"id":"1027","type":"HelpTool"},{"attributes":{"dimension":1,"grid_line_alpha":0.3,"ticker":{"id":"1018","type":"BasicTicker"}},"id":"1021","type":"Grid"},{"attributes":{"callback":null,"data":{"x0":{"__ndarray__":"AADADQundkIAAIBzXad2QgAAQNmvp3ZCAACACqeodkIAAEBw+ah2QgAAANZLqXZCAADAO56pdkIAAICh8Kl2QgAAwNLnqnZCAACAODqrdkIAAECejKt2QgAAAATfq3ZCAADAaTGsdkIAAACbKK12QgAAwAB7rXZCAACAZs2tdkIAAEDMH652QgAAADJyrnZCAAAAybuvdkIAAMAuDrB2QgAAgJRgsHZCAABA+rKwdkIAAIArqrF2QgAAQJH8sXZCAAAA906ydkIAAMBcobJ2QgAAgMLzsnZCAADA8+qzdkIAAIBZPbR2QgAAQL+PtHZCAAAAJeK0dkIAAMCKNLV2QgAAALwrtnZCAADAIX62dkIAAICH0LZ2QgAAQO0it3ZCAAAAU3W3dkIAAECEbLh2QgAAAOq+uHZCAADATxG5dkIAAIC1Y7l2QgAAQBu2uXZCAACATK26dkIAAECy/7p2QgAAABhSu3ZCAACA4/a7dkIAAMAU7rx2QgAAgHpAvXZCAABA4JK9dkIAAABG5b12QgAAwKs3vnZCAAAA3S6/dkIAAMBCgb92QgAAgKjTv3ZCAABADibAdkIAAAB0eMB2QgAAQKVvwXZCAAAAC8LBdkIAAMBwFMJ2QgAAgNZmwnZCAABAPLnCdkIAAIBtsMN2QgAAQNMCxHZCAAAAOVXEdkIAAMCep8R2QgAAgAT6xHZCAADANfHFdkIAAICbQ8Z2QgAAQAGWxnZCAAAAZ+jGdkIAAMDMOsd2QgAAAP4xyHZCAADAY4TIdkIAAIDJ1sh2QgAAQC8pyXZCAAAAlXvJdkIAAEDGcsp2QgAAACzFynZCAADAkRfLdkIAAID3act2QgAAQF28y3ZCAACAjrPMdkIAAED0Bc12QgAAAFpYzXZCAADAv6rNdkIAAIAl/c12QgAAgLxGz3ZCAABAIpnPdkIAAACI6892QgAAwO090HZCAAAAHzXRdkIAAMCEh9F2QgAAgOrZ0XZCAABAUCzSdkIAAAC2ftJ2QgAAQOd103ZCAAAATcjTdkIAAMCyGtR2QgAAgBht1HZCAABAfr/UdkIAAICvttV2QgAAQBUJ1nZCAAAAe1vWdkIAAMDgrdZ2QgAAgEYA13ZCAADAd/fXdkIAAIDdSdh2QgAAQEOc2HZCAAAAqe7YdkIAAMAOQdl2QgAAAEA42nZCAADApYradkIAAIAL3dp2QgAAQHEv23ZCAAAA14HbdkIAAEAIedx2QgAAAG7L3HZCAADA0x3ddkIAAIA5cN12QgAAQJ/C3XZCAACA0LnedkIAAEA2DN92QgAAAJxe33ZCAADAAbHfdkIAAIBnA+B2QgAAwJj64HZCAACA/kzhdkIAAEBkn+F2QgAAAMrx4XZCAADAL0TidkI=","dtype":"float64","shape":[130]},"x1":{"__ndarray__":"AADADQundkIAAIBzXad2QgAAQNmvp3ZCAACACqeodkIAAEBw+ah2QgAAANZLqXZCAADAO56pdkIAAICh8Kl2QgAAwNLnqnZCAACAODqrdkIAAECejKt2QgAAAATfq3ZCAADAaTGsdkIAAACbKK12QgAAwAB7rXZCAACAZs2tdkIAAEDMH652QgAAADJyrnZCAAAAybuvdkIAAMAuDrB2QgAAgJRgsHZCAABA+rKwdkIAAIArqrF2QgAAQJH8sXZCAAAA906ydkIAAMBcobJ2QgAAgMLzsnZCAADA8+qzdkIAAIBZPbR2QgAAQL+PtHZCAAAAJeK0dkIAAMCKNLV2QgAAALwrtnZCAADAIX62dkIAAICH0LZ2QgAAQO0it3ZCAAAAU3W3dkIAAECEbLh2QgAAAOq+uHZCAADATxG5dkIAAIC1Y7l2QgAAQBu2uXZCAACATK26dkIAAECy/7p2QgAAABhSu3ZCAACA4/a7dkIAAMAU7rx2QgAAgHpAvXZCAABA4JK9dkIAAABG5b12QgAAwKs3vnZCAAAA3S6/dkIAAMBCgb92QgAAgKjTv3ZCAABADibAdkIAAAB0eMB2QgAAQKVvwXZCAAAAC8LBdkIAAMBwFMJ2QgAAgNZmwnZCAABAPLnCdkIAAIBtsMN2QgAAQNMCxHZCAAAAOVXEdkIAAMCep8R2QgAAgAT6xHZCAADANfHFdkIAAICbQ8Z2QgAAQAGWxnZCAAAAZ+jGdkIAAMDMOsd2QgAAAP4xyHZCAADAY4TIdkIAAIDJ1sh2QgAAQC8pyXZCAAAAlXvJdkIAAEDGcsp2QgAAACzFynZCAADAkRfLdkIAAID3act2QgAAQF28y3ZCAACAjrPMdkIAAED0Bc12QgAAAFpYzXZCAADAv6rNdkIAAIAl/c12QgAAgLxGz3ZCAABAIpnPdkIAAACI6892QgAAwO090HZCAAAAHzXRdkIAAMCEh9F2QgAAgOrZ0XZCAABAUCzSdkIAAAC2ftJ2QgAAQOd103ZCAAAATcjTdkIAAMCyGtR2QgAAgBht1HZCAABAfr/UdkIAAICvttV2QgAAQBUJ1nZCAAAAe1vWdkIAAMDgrdZ2QgAAgEYA13ZCAADAd/fXdkIAAIDdSdh2QgAAQEOc2HZCAAAAqe7YdkIAAMAOQdl2QgAAAEA42nZCAADApYradkIAAIAL3dp2QgAAQHEv23ZCAAAA14HbdkIAAEAIedx2QgAAAG7L3HZCAADA0x3ddkIAAIA5cN12QgAAQJ/C3XZCAACA0LnedkIAAEA2DN92QgAAAJxe33ZCAADAAbHfdkIAAIBnA+B2QgAAwJj64HZCAACA/kzhdkIAAEBkn+F2QgAAAMrx4XZCAADAL0TidkI=","dtype":"float64","shape":[130]},"y0":{"__ndarray__":"AAAAAAAAbkAAAAAAKeRuQAAAAIDCCXBAAAAAoJklcEAAAAAgXBNwQAAAAEAzU29AAAAAgMJ1bkAAAAAgrj9uQAAAAEAKD21AAAAAAABQbUAAAACAFA5tQAAAAAAA4GxAAAAAIK7Ha0AAAAAAAMBpQAAAAMDM7GlAAAAAgBR+aUAAAABACu9oQAAAACBc/2hAAAAAAABgaEAAAADgegxoQAAAAOBRCGhAAAAAoHC9Z0AAAACAwlVnQAAAACBcP2hAAAAAwPUoaUAAAAAAAGBqQAAAAEDhWmpAAAAAgBQea0AAAADAzJxrQAAAAAAp7GtAAAAAwMzcakAAAADAzBRrQAAAAAAAYGxAAAAAIK5XbUAAAADgo3hsQAAAAMDMXGxAAAAAgMLFa0AAAAAghTtsQAAAAEDhKmxAAAAAIFxnbEAAAADAzNxrQAAAAKBwJWxAAAAAQDMjbUAAAADAzKRsQAAAAIA9Mm5AAAAAYGZubUAAAAAAAAhtQAAAAAAA4GxAAAAAgBTebUAAAAAAADBuQAAAAAAprG5AAAAAoHDNb0AAAADA9bBvQAAAAMD1JHBAAAAAAAD4b0AAAAAgXD9wQAAAAGBmYnBAAAAAIK5HcEAAAADAHqFwQAAAAAAAUG1AAAAA4FHIbEAAAACAFH5tQAAAACCFa25AAAAAgMLVbkAAAADgUZBuQAAAAOCjiG1AAAAAANfrbEAAAAAAABBtQAAAAIA9Mm1AAAAAoJn5bUAAAABguN5tQAAAAOCjeG1AAAAAAACAbUAAAAAAAPBsQAAAAIDrsWtAAAAAIK7Ha0AAAABgj3psQAAAAEDhomxAAAAAQArna0AAAADAzCxsQAAAAKBwpWtAAAAA4KPgakAAAACgmVlrQAAAAAAAKGtAAAAAwMzsa0AAAACAFA5tQAAAAGBmnmxAAAAAYLiObEAAAACgmblsQAAAAOB6tGxAAAAA4FE4bUAAAACgR3FtQAAAAKBwBW9AAAAAAACwb0AAAABgZg5vQAAAAIDC7W5AAAAAQDOzbkAAAACgcAVvQAAAAIAU/m5AAAAAYGbebkAAAACAwqVuQAAAACCuP25AAAAAIFyfbEAAAACA62luQAAAAGC4Fm9AAAAAIFx/bkAAAABgZr5uQAAAAMDMlG5AAAAAIFxPbUAAAADA9VhtQAAAAIDr0W1AAAAAgBR+bkAAAACgmeluQAAAAMD1KG9AAAAAYI9ib0AAAADAzChwQAAAAAAAQHBAAAAAoJlhcEAAAADgeoxwQAAAAMDMbHBAAAAAAAA4cEAAAACgRyVwQAAAAIA9AnBAAAAAQOEOc0AAAAAAAKB0QAAAAKBwTXVAAAAAwMxEdEAAAADgo+xzQAAAAAAA8HNAAAAAIK7Hc0A=","dtype":"float64","shape":[130]},"y1":{"__ndarray__":"AAAAAADwbEAAAABACrdtQAAAACCub25AAAAAAAAQb0AAAABAM6NuQAAAAGBmhm5AAAAAgBSebUAAAADgo4BtQAAAAAAAEGxAAAAAAACAbEAAAAAAAChsQAAAAAAAUGxAAAAAoHAdakAAAAAAAGhoQAAAAKBHgWhAAAAAwPX4Z0AAAABACkdnQAAAAAAAmGdAAAAAQDN7Z0AAAACgRyFnQAAAAOCjYGdAAAAAQDMDZ0AAAAAgrh9mQAAAACCFc2ZAAAAAQDP7Z0AAAACgmTlpQAAAAAAAcGlAAAAA4FEgakAAAAAAALBqQAAAAAAAIGpAAAAA4FHwaUAAAADAzExqQAAAAOCjyGpAAAAAgOvRa0AAAACA66FrQAAAAEAzC2tAAAAAAADwakAAAADgo6BrQAAAACCub2tAAAAAQDNDa0AAAABAMytrQAAAAKCZmWtAAAAAwPVIbEAAAABACsdrQAAAAOBRUG1AAAAAoJnZbEAAAADAHpVsQAAAAMD1aGxAAAAA4HokbUAAAACgmXltQAAAAGC49m1AAAAAIIWbbkAAAACAwv1uQAAAAEAzq29AAAAA4Hp8b0AAAAAA19NvQAAAAIAUxm9AAAAAAADQb0AAAABgjyJwQAAAAKCZMWxAAAAAAADIa0AAAADA9UBsQAAAAIDCBW1AAAAAwMyUbUAAAADgo/hsQAAAACBcp2xAAAAAwPU4bEAAAAAAADhsQAAAAKCZOWxAAAAAwMwUbUAAAACA6zltQAAAAAAAmGxAAAAAoJlxbEAAAACAFBZrQAAAAKCZcWpAAAAA4KMAa0AAAABgZrZrQAAAAKBHEWxAAAAAQDMza0AAAABACkdrQAAAAAAAYGpAAAAAoEdxakAAAADA9YBqQAAAAIDriWpAAAAAAABAa0AAAABguAZsQAAAAMAe5WtAAAAAYLhma0AAAABAM5trQAAAAKBwJWxAAAAAIFynbEAAAACAFJ5sQAAAAAAAgG1AAAAAwMyMbkAAAAAA15tuQAAAAKBwJW5AAAAAANcLbkAAAAAA10tuQAAAAEDhmm5AAAAAwB7FbUAAAABACudtQAAAACCF02tAAAAAIIVLa0AAAADAzGxsQAAAACBc121AAAAAIIWDbUAAAAAAKeRtQAAAAIDC7W1AAAAAwPUIbEAAAACAPYJsQAAAAKCZkWxAAAAAAABQbUAAAADAzBRuQAAAAGCPMm5AAAAAgOvZbkAAAAAAKeRuQAAAAADXw29AAAAAYLgOcEAAAABguEJwQAAAAEAz429AAAAAgMJFb0AAAABAM1tvQAAAAEAza29AAAAAQDMTckAAAACAwoFyQAAAAKCZKXRAAAAAAACsc0AAAAAghV9zQAAAAAAAkHNAAAAAwMxcc0A=","dtype":"float64","shape":[130]}},"selected":{"id":"1069","type":"Selection"},"selection_policy":{"id":"1068","type":"UnionRenderers"}},"id":"1035","type":"ColumnDataSource"},{"attributes":{"base":24,"mantissas":[1,2,4,6,8,12],"max_interval":43200000.0,"min_interval":3600000.0,"num_minor_ticks":0},"id":"1058","type":"AdaptiveTicker"},{"attributes":{"formatter":{"id":"1053","type":"DatetimeTickFormatter"},"ticker":{"id":"1013","type":"DatetimeTicker"}},"id":"1012","type":"DatetimeAxis"},{"attributes":{},"id":"1026","type":"ResetTool"},{"attributes":{"days":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]},"id":"1059","type":"DaysTicker"},{"attributes":{"overlay":{"id":"1055","type":"BoxAnnotation"}},"id":"1024","type":"BoxZoomTool"},{"attributes":{"days":[1,4,7,10,13,16,19,22,25,28]},"id":"1060","type":"DaysTicker"},{"attributes":{},"id":"1025","type":"SaveTool"},{"attributes":{"days":[1,8,15,22]},"id":"1061","type":"DaysTicker"},{"attributes":{"fill_color":{"value":"red"},"height":{"field":"height","units":"data"},"width":{"units":"data","value":86400000},"x":{"field":"x"},"y":{"field":"y"}},"id":"1046","type":"Rect"},{"attributes":{"num_minor_ticks":5,"tickers":[{"id":"1056","type":"AdaptiveTicker"},{"id":"1057","type":"AdaptiveTicker"},{"id":"1058","type":"AdaptiveTicker"},{"id":"1059","type":"DaysTicker"},{"id":"1060","type":"DaysTicker"},{"id":"1061","type":"DaysTicker"},{"id":"1062","type":"DaysTicker"},{"id":"1063","type":"MonthsTicker"},{"id":"1064","type":"MonthsTicker"},{"id":"1065","type":"MonthsTicker"},{"id":"1066","type":"MonthsTicker"},{"id":"1067","type":"YearsTicker"}]},"id":"1013","type":"DatetimeTicker"},{"attributes":{},"id":"1070","type":"UnionRenderers"}],"root_ids":["1001"]},"title":"Bokeh Application","version":"1.3.4"}}
-        </script>
-        <script type="text/javascript">
-          (function() {
-            var fn = function() {
-              Bokeh.safely(function() {
-                (function(root) {
-                  function embed_document(root) {
-                    
-                  var docs_json = document.getElementById('1266').textContent;
-                  var render_items = [{"docid":"b730b719-b5ce-4673-97d3-664f0c1cad7c","roots":{"1001":"705b1f87-3bb5-4939-a101-68c15ae0615c"}}];
-                  root.Bokeh.embed.embed_items(docs_json, render_items);
-                
-                  }
-                  if (root.Bokeh !== undefined) {
-                    embed_document(root);
-                  } else {
-                    var attempts = 0;
-                    var timer = setInterval(function(root) {
-                      if (root.Bokeh !== undefined) {
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Bokeh Plot</title>
+
+
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+
+
+</head>
+
+
+<body>
+
+
+<div class="bk-root" id="cfc57de1-a37e-415d-8fe2-1d52e190dc72" data-root-id="1001"></div>
+
+
+<script type="application/json" id="1362">
+    {
+        "5718eeee-dbcd-4788-ba82-0614d440de5f": {
+            "roots": {
+                "references": [
+                    {
+                        "attributes": {},
+                        "id": "1069",
+                        "type": "UnionRenderers"
+                    },
+                    {
+                        "attributes": {
+                            "days": [
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11,
+                                12,
+                                13,
+                                14,
+                                15,
+                                16,
+                                17,
+                                18,
+                                19,
+                                20,
+                                21,
+                                22,
+                                23,
+                                24,
+                                25,
+                                26,
+                                27,
+                                28,
+                                29,
+                                30,
+                                31
+                            ]
+                        },
+                        "id": "1059",
+                        "type": "DaysTicker"
+                    },
+                    {
+                        "attributes": {
+                            "base": 60,
+                            "mantissas": [
+                                1,
+                                2,
+                                5,
+                                10,
+                                15,
+                                20,
+                                30
+                            ],
+                            "max_interval": 1800000.0,
+                            "min_interval": 1000.0,
+                            "num_minor_ticks": 0
+                        },
+                        "id": "1057",
+                        "type": "AdaptiveTicker"
+                    },
+                    {
+                        "attributes": {
+                            "formatter": {
+                                "id": "1051",
+                                "type": "BasicTickFormatter"
+                            },
+                            "ticker": {
+                                "id": "1018",
+                                "type": "BasicTicker"
+                            }
+                        },
+                        "id": "1017",
+                        "type": "LinearAxis"
+                    },
+                    {
+                        "attributes": {
+                            "base": 24,
+                            "mantissas": [
+                                1,
+                                2,
+                                4,
+                                6,
+                                8,
+                                12
+                            ],
+                            "max_interval": 43200000.0,
+                            "min_interval": 3600000.0,
+                            "num_minor_ticks": 0
+                        },
+                        "id": "1058",
+                        "type": "AdaptiveTicker"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1067",
+                        "type": "YearsTicker"
+                    },
+                    {
+                        "attributes": {
+                            "months": [
+                                0,
+                                6
+                            ]
+                        },
+                        "id": "1066",
+                        "type": "MonthsTicker"
+                    },
+                    {
+                        "attributes": {
+                            "mantissas": [
+                                1,
+                                2,
+                                5
+                            ],
+                            "max_interval": 500.0,
+                            "num_minor_ticks": 0
+                        },
+                        "id": "1056",
+                        "type": "AdaptiveTicker"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1068",
+                        "type": "Selection"
+                    },
+                    {
+                        "attributes": {
+                            "dimension": 1,
+                            "grid_line_alpha": 0.3,
+                            "ticker": {
+                                "id": "1018",
+                                "type": "BasicTicker"
+                            }
+                        },
+                        "id": "1021",
+                        "type": "Grid"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1070",
+                        "type": "Selection"
+                    },
+                    {
+                        "attributes": {
+                            "source": {
+                                "id": "1035",
+                                "type": "ColumnDataSource"
+                            }
+                        },
+                        "id": "1039",
+                        "type": "CDSView"
+                    },
+                    {
+                        "attributes": {
+                            "grid_line_alpha": 0.3,
+                            "ticker": {
+                                "id": "1013",
+                                "type": "DatetimeTicker"
+                            }
+                        },
+                        "id": "1016",
+                        "type": "Grid"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1071",
+                        "type": "UnionRenderers"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1051",
+                        "type": "BasicTickFormatter"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1072",
+                        "type": "Selection"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1026",
+                        "type": "ResetTool"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1010",
+                        "type": "LinearScale"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1073",
+                        "type": "UnionRenderers"
+                    },
+                    {
+                        "attributes": {
+                            "callback": null
+                        },
+                        "id": "1006",
+                        "type": "DataRange1d"
+                    },
+                    {
+                        "attributes": {
+                            "overlay": {
+                                "id": "1055",
+                                "type": "BoxAnnotation"
+                            }
+                        },
+                        "id": "1024",
+                        "type": "BoxZoomTool"
+                    },
+                    {
+                        "attributes": {
+                            "source": {
+                                "id": "1040",
+                                "type": "ColumnDataSource"
+                            }
+                        },
+                        "id": "1044",
+                        "type": "CDSView"
+                    },
+                    {
+                        "attributes": {
+                            "bottom_units": "screen",
+                            "fill_alpha": {
+                                "value": 0.5
+                            },
+                            "fill_color": {
+                                "value": "lightgrey"
+                            },
+                            "left_units": "screen",
+                            "level": "overlay",
+                            "line_alpha": {
+                                "value": 1.0
+                            },
+                            "line_color": {
+                                "value": "black"
+                            },
+                            "line_dash": [
+                                4,
+                                4
+                            ],
+                            "line_width": {
+                                "value": 2
+                            },
+                            "render_mode": "css",
+                            "right_units": "screen",
+                            "top_units": "screen"
+                        },
+                        "id": "1055",
+                        "type": "BoxAnnotation"
+                    },
+                    {
+                        "attributes": {
+                            "active_drag": "auto",
+                            "active_inspect": "auto",
+                            "active_multi": null,
+                            "active_scroll": "auto",
+                            "active_tap": "auto",
+                            "tools": [
+                                {
+                                    "id": "1022",
+                                    "type": "PanTool"
+                                },
+                                {
+                                    "id": "1023",
+                                    "type": "WheelZoomTool"
+                                },
+                                {
+                                    "id": "1024",
+                                    "type": "BoxZoomTool"
+                                },
+                                {
+                                    "id": "1025",
+                                    "type": "SaveTool"
+                                },
+                                {
+                                    "id": "1026",
+                                    "type": "ResetTool"
+                                },
+                                {
+                                    "id": "1027",
+                                    "type": "HelpTool"
+                                }
+                            ]
+                        },
+                        "id": "1028",
+                        "type": "Toolbar"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1053",
+                        "type": "DatetimeTickFormatter"
+                    },
+                    {
+                        "attributes": {
+                            "fill_alpha": {
+                                "value": 0.1
+                            },
+                            "fill_color": {
+                                "value": "#1f77b4"
+                            },
+                            "height": {
+                                "field": "height",
+                                "units": "data"
+                            },
+                            "line_alpha": {
+                                "value": 0.1
+                            },
+                            "line_color": {
+                                "value": "#1f77b4"
+                            },
+                            "width": {
+                                "units": "data",
+                                "value": 86400000
+                            },
+                            "x": {
+                                "field": "x"
+                            },
+                            "y": {
+                                "field": "y"
+                            }
+                        },
+                        "id": "1042",
+                        "type": "Rect"
+                    },
+                    {
+                        "attributes": {
+                            "callback": null,
+                            "data": {
+                                "x0": {
+                                    "__ndarray__": "AADADQundkIAAIBzXad2QgAAQNmvp3ZCAACACqeodkIAAEBw+ah2QgAAANZLqXZCAADAO56pdkIAAICh8Kl2QgAAwNLnqnZCAACAODqrdkIAAECejKt2QgAAAATfq3ZCAADAaTGsdkIAAACbKK12QgAAwAB7rXZCAACAZs2tdkIAAEDMH652QgAAADJyrnZCAAAAybuvdkIAAMAuDrB2QgAAgJRgsHZCAABA+rKwdkIAAIArqrF2QgAAQJH8sXZCAAAA906ydkIAAMBcobJ2QgAAgMLzsnZCAADA8+qzdkIAAIBZPbR2QgAAQL+PtHZCAAAAJeK0dkIAAMCKNLV2QgAAALwrtnZCAADAIX62dkIAAICH0LZ2QgAAQO0it3ZCAAAAU3W3dkIAAECEbLh2QgAAAOq+uHZCAADATxG5dkIAAIC1Y7l2QgAAQBu2uXZCAACATK26dkIAAECy/7p2QgAAABhSu3ZCAACA4/a7dkIAAMAU7rx2QgAAgHpAvXZCAABA4JK9dkIAAABG5b12QgAAwKs3vnZCAAAA3S6/dkIAAMBCgb92QgAAgKjTv3ZCAABADibAdkIAAAB0eMB2QgAAQKVvwXZCAAAAC8LBdkIAAMBwFMJ2QgAAgNZmwnZCAABAPLnCdkIAAIBtsMN2QgAAQNMCxHZCAAAAOVXEdkIAAMCep8R2QgAAgAT6xHZCAADANfHFdkIAAICbQ8Z2QgAAQAGWxnZCAAAAZ+jGdkIAAMDMOsd2QgAAAP4xyHZCAADAY4TIdkIAAIDJ1sh2QgAAQC8pyXZCAAAAlXvJdkIAAEDGcsp2QgAAACzFynZCAADAkRfLdkIAAID3act2QgAAQF28y3ZCAACAjrPMdkIAAED0Bc12QgAAAFpYzXZCAADAv6rNdkIAAIAl/c12QgAAgLxGz3ZCAABAIpnPdkIAAACI6892QgAAwO090HZCAAAAHzXRdkIAAMCEh9F2QgAAgOrZ0XZCAABAUCzSdkIAAAC2ftJ2QgAAQOd103ZCAAAATcjTdkIAAMCyGtR2QgAAgBht1HZCAABAfr/UdkIAAICvttV2QgAAQBUJ1nZCAAAAe1vWdkIAAMDgrdZ2QgAAgEYA13ZCAADAd/fXdkIAAIDdSdh2QgAAQEOc2HZCAAAAqe7YdkIAAMAOQdl2QgAAAEA42nZCAADApYradkIAAIAL3dp2QgAAQHEv23ZCAAAA14HbdkIAAEAIedx2QgAAAG7L3HZCAADA0x3ddkIAAIA5cN12QgAAQJ/C3XZCAACA0LnedkIAAEA2DN92QgAAAJxe33ZCAADAAbHfdkIAAIBnA+B2QgAAwJj64HZCAACA/kzhdkIAAEBkn+F2QgAAAMrx4XZCAADAL0TidkI=",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        130
+                                    ]
+                                },
+                                "x1": {
+                                    "__ndarray__": "AADADQundkIAAIBzXad2QgAAQNmvp3ZCAACACqeodkIAAEBw+ah2QgAAANZLqXZCAADAO56pdkIAAICh8Kl2QgAAwNLnqnZCAACAODqrdkIAAECejKt2QgAAAATfq3ZCAADAaTGsdkIAAACbKK12QgAAwAB7rXZCAACAZs2tdkIAAEDMH652QgAAADJyrnZCAAAAybuvdkIAAMAuDrB2QgAAgJRgsHZCAABA+rKwdkIAAIArqrF2QgAAQJH8sXZCAAAA906ydkIAAMBcobJ2QgAAgMLzsnZCAADA8+qzdkIAAIBZPbR2QgAAQL+PtHZCAAAAJeK0dkIAAMCKNLV2QgAAALwrtnZCAADAIX62dkIAAICH0LZ2QgAAQO0it3ZCAAAAU3W3dkIAAECEbLh2QgAAAOq+uHZCAADATxG5dkIAAIC1Y7l2QgAAQBu2uXZCAACATK26dkIAAECy/7p2QgAAABhSu3ZCAACA4/a7dkIAAMAU7rx2QgAAgHpAvXZCAABA4JK9dkIAAABG5b12QgAAwKs3vnZCAAAA3S6/dkIAAMBCgb92QgAAgKjTv3ZCAABADibAdkIAAAB0eMB2QgAAQKVvwXZCAAAAC8LBdkIAAMBwFMJ2QgAAgNZmwnZCAABAPLnCdkIAAIBtsMN2QgAAQNMCxHZCAAAAOVXEdkIAAMCep8R2QgAAgAT6xHZCAADANfHFdkIAAICbQ8Z2QgAAQAGWxnZCAAAAZ+jGdkIAAMDMOsd2QgAAAP4xyHZCAADAY4TIdkIAAIDJ1sh2QgAAQC8pyXZCAAAAlXvJdkIAAEDGcsp2QgAAACzFynZCAADAkRfLdkIAAID3act2QgAAQF28y3ZCAACAjrPMdkIAAED0Bc12QgAAAFpYzXZCAADAv6rNdkIAAIAl/c12QgAAgLxGz3ZCAABAIpnPdkIAAACI6892QgAAwO090HZCAAAAHzXRdkIAAMCEh9F2QgAAgOrZ0XZCAABAUCzSdkIAAAC2ftJ2QgAAQOd103ZCAAAATcjTdkIAAMCyGtR2QgAAgBht1HZCAABAfr/UdkIAAICvttV2QgAAQBUJ1nZCAAAAe1vWdkIAAMDgrdZ2QgAAgEYA13ZCAADAd/fXdkIAAIDdSdh2QgAAQEOc2HZCAAAAqe7YdkIAAMAOQdl2QgAAAEA42nZCAADApYradkIAAIAL3dp2QgAAQHEv23ZCAAAA14HbdkIAAEAIedx2QgAAAG7L3HZCAADA0x3ddkIAAIA5cN12QgAAQJ/C3XZCAACA0LnedkIAAEA2DN92QgAAAJxe33ZCAADAAbHfdkIAAIBnA+B2QgAAwJj64HZCAACA/kzhdkIAAEBkn+F2QgAAAMrx4XZCAADAL0TidkI=",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        130
+                                    ]
+                                },
+                                "y0": {
+                                    "__ndarray__": "AAAAAAAAbkAAAAAAKeRuQAAAAIDCCXBAAAAAoJklcEAAAAAgXBNwQAAAAEAzU29AAAAAgMJ1bkAAAAAgrj9uQAAAAEAKD21AAAAAAABQbUAAAACAFA5tQAAAAAAA4GxAAAAAIK7Ha0AAAAAAAMBpQAAAAMDM7GlAAAAAgBR+aUAAAABACu9oQAAAACBc/2hAAAAAAABgaEAAAADgegxoQAAAAOBRCGhAAAAAoHC9Z0AAAACAwlVnQAAAACBcP2hAAAAAwPUoaUAAAAAAAGBqQAAAAEDhWmpAAAAAgBQea0AAAADAzJxrQAAAAAAp7GtAAAAAwMzcakAAAADAzBRrQAAAAAAAYGxAAAAAIK5XbUAAAADgo3hsQAAAAMDMXGxAAAAAgMLFa0AAAAAghTtsQAAAAEDhKmxAAAAAIFxnbEAAAADAzNxrQAAAAKBwJWxAAAAAQDMjbUAAAADAzKRsQAAAAIA9Mm5AAAAAYGZubUAAAAAAAAhtQAAAAAAA4GxAAAAAgBTebUAAAAAAADBuQAAAAAAprG5AAAAAoHDNb0AAAADA9bBvQAAAAMD1JHBAAAAAAAD4b0AAAAAgXD9wQAAAAGBmYnBAAAAAIK5HcEAAAADAHqFwQAAAAAAAUG1AAAAA4FHIbEAAAACAFH5tQAAAACCFa25AAAAAgMLVbkAAAADgUZBuQAAAAOCjiG1AAAAAANfrbEAAAAAAABBtQAAAAIA9Mm1AAAAAoJn5bUAAAABguN5tQAAAAOCjeG1AAAAAAACAbUAAAAAAAPBsQAAAAIDrsWtAAAAAIK7Ha0AAAABgj3psQAAAAEDhomxAAAAAQArna0AAAADAzCxsQAAAAKBwpWtAAAAA4KPgakAAAACgmVlrQAAAAAAAKGtAAAAAwMzsa0AAAACAFA5tQAAAAGBmnmxAAAAAYLiObEAAAACgmblsQAAAAOB6tGxAAAAA4FE4bUAAAACgR3FtQAAAAKBwBW9AAAAAAACwb0AAAABgZg5vQAAAAIDC7W5AAAAAQDOzbkAAAACgcAVvQAAAAIAU/m5AAAAAYGbebkAAAACAwqVuQAAAACCuP25AAAAAIFyfbEAAAACA62luQAAAAGC4Fm9AAAAAIFx/bkAAAABgZr5uQAAAAMDMlG5AAAAAIFxPbUAAAADA9VhtQAAAAIDr0W1AAAAAgBR+bkAAAACgmeluQAAAAMD1KG9AAAAAYI9ib0AAAADAzChwQAAAAAAAQHBAAAAAoJlhcEAAAADgeoxwQAAAAMDMbHBAAAAAAAA4cEAAAACgRyVwQAAAAIA9AnBAAAAAQOEOc0AAAAAAAKB0QAAAAKBwTXVAAAAAwMxEdEAAAADgo+xzQAAAAAAA8HNAAAAAIK7Hc0A=",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        130
+                                    ]
+                                },
+                                "y1": {
+                                    "__ndarray__": "AAAAAADwbEAAAABACrdtQAAAACCub25AAAAAAAAQb0AAAABAM6NuQAAAAGBmhm5AAAAAgBSebUAAAADgo4BtQAAAAAAAEGxAAAAAAACAbEAAAAAAAChsQAAAAAAAUGxAAAAAoHAdakAAAAAAAGhoQAAAAKBHgWhAAAAAwPX4Z0AAAABACkdnQAAAAAAAmGdAAAAAQDN7Z0AAAACgRyFnQAAAAOCjYGdAAAAAQDMDZ0AAAAAgrh9mQAAAACCFc2ZAAAAAQDP7Z0AAAACgmTlpQAAAAAAAcGlAAAAA4FEgakAAAAAAALBqQAAAAAAAIGpAAAAA4FHwaUAAAADAzExqQAAAAOCjyGpAAAAAgOvRa0AAAACA66FrQAAAAEAzC2tAAAAAAADwakAAAADgo6BrQAAAACCub2tAAAAAQDNDa0AAAABAMytrQAAAAKCZmWtAAAAAwPVIbEAAAABACsdrQAAAAOBRUG1AAAAAoJnZbEAAAADAHpVsQAAAAMD1aGxAAAAA4HokbUAAAACgmXltQAAAAGC49m1AAAAAIIWbbkAAAACAwv1uQAAAAEAzq29AAAAA4Hp8b0AAAAAA19NvQAAAAIAUxm9AAAAAAADQb0AAAABgjyJwQAAAAKCZMWxAAAAAAADIa0AAAADA9UBsQAAAAIDCBW1AAAAAwMyUbUAAAADgo/hsQAAAACBcp2xAAAAAwPU4bEAAAAAAADhsQAAAAKCZOWxAAAAAwMwUbUAAAACA6zltQAAAAAAAmGxAAAAAoJlxbEAAAACAFBZrQAAAAKCZcWpAAAAA4KMAa0AAAABgZrZrQAAAAKBHEWxAAAAAQDMza0AAAABACkdrQAAAAAAAYGpAAAAAoEdxakAAAADA9YBqQAAAAIDriWpAAAAAAABAa0AAAABguAZsQAAAAMAe5WtAAAAAYLhma0AAAABAM5trQAAAAKBwJWxAAAAAIFynbEAAAACAFJ5sQAAAAAAAgG1AAAAAwMyMbkAAAAAA15tuQAAAAKBwJW5AAAAAANcLbkAAAAAA10tuQAAAAEDhmm5AAAAAwB7FbUAAAABACudtQAAAACCF02tAAAAAIIVLa0AAAADAzGxsQAAAACBc121AAAAAIIWDbUAAAAAAKeRtQAAAAIDC7W1AAAAAwPUIbEAAAACAPYJsQAAAAKCZkWxAAAAAAABQbUAAAADAzBRuQAAAAGCPMm5AAAAAgOvZbkAAAAAAKeRuQAAAAADXw29AAAAAYLgOcEAAAABguEJwQAAAAEAz429AAAAAgMJFb0AAAABAM1tvQAAAAEAza29AAAAAQDMTckAAAACAwoFyQAAAAKCZKXRAAAAAAACsc0AAAAAghV9zQAAAAAAAkHNAAAAAwMxcc0A=",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        130
+                                    ]
+                                }
+                            },
+                            "selected": {
+                                "id": "1068",
+                                "type": "Selection"
+                            },
+                            "selection_policy": {
+                                "id": "1069",
+                                "type": "UnionRenderers"
+                            }
+                        },
+                        "id": "1035",
+                        "type": "ColumnDataSource"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1022",
+                        "type": "PanTool"
+                    },
+                    {
+                        "attributes": {
+                            "data_source": {
+                                "id": "1035",
+                                "type": "ColumnDataSource"
+                            },
+                            "glyph": {
+                                "id": "1036",
+                                "type": "Segment"
+                            },
+                            "hover_glyph": null,
+                            "muted_glyph": null,
+                            "nonselection_glyph": {
+                                "id": "1037",
+                                "type": "Segment"
+                            },
+                            "selection_glyph": null,
+                            "view": {
+                                "id": "1039",
+                                "type": "CDSView"
+                            }
+                        },
+                        "id": "1038",
+                        "type": "GlyphRenderer"
+                    },
+                    {
+                        "attributes": {
+                            "data_source": {
+                                "id": "1045",
+                                "type": "ColumnDataSource"
+                            },
+                            "glyph": {
+                                "id": "1046",
+                                "type": "Rect"
+                            },
+                            "hover_glyph": null,
+                            "muted_glyph": null,
+                            "nonselection_glyph": {
+                                "id": "1047",
+                                "type": "Rect"
+                            },
+                            "selection_glyph": null,
+                            "view": {
+                                "id": "1049",
+                                "type": "CDSView"
+                            }
+                        },
+                        "id": "1048",
+                        "type": "GlyphRenderer"
+                    },
+                    {
+                        "attributes": {
+                            "source": {
+                                "id": "1045",
+                                "type": "ColumnDataSource"
+                            }
+                        },
+                        "id": "1049",
+                        "type": "CDSView"
+                    },
+                    {
+                        "attributes": {
+                            "num_minor_ticks": 5,
+                            "tickers": [
+                                {
+                                    "id": "1056",
+                                    "type": "AdaptiveTicker"
+                                },
+                                {
+                                    "id": "1057",
+                                    "type": "AdaptiveTicker"
+                                },
+                                {
+                                    "id": "1058",
+                                    "type": "AdaptiveTicker"
+                                },
+                                {
+                                    "id": "1059",
+                                    "type": "DaysTicker"
+                                },
+                                {
+                                    "id": "1060",
+                                    "type": "DaysTicker"
+                                },
+                                {
+                                    "id": "1061",
+                                    "type": "DaysTicker"
+                                },
+                                {
+                                    "id": "1062",
+                                    "type": "DaysTicker"
+                                },
+                                {
+                                    "id": "1063",
+                                    "type": "MonthsTicker"
+                                },
+                                {
+                                    "id": "1064",
+                                    "type": "MonthsTicker"
+                                },
+                                {
+                                    "id": "1065",
+                                    "type": "MonthsTicker"
+                                },
+                                {
+                                    "id": "1066",
+                                    "type": "MonthsTicker"
+                                },
+                                {
+                                    "id": "1067",
+                                    "type": "YearsTicker"
+                                }
+                            ]
+                        },
+                        "id": "1013",
+                        "type": "DatetimeTicker"
+                    },
+                    {
+                        "attributes": {
+                            "formatter": {
+                                "id": "1053",
+                                "type": "DatetimeTickFormatter"
+                            },
+                            "ticker": {
+                                "id": "1013",
+                                "type": "DatetimeTicker"
+                            }
+                        },
+                        "id": "1012",
+                        "type": "DatetimeAxis"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1018",
+                        "type": "BasicTicker"
+                    },
+                    {
+                        "attributes": {
+                            "fill_alpha": {
+                                "value": 0.1
+                            },
+                            "fill_color": {
+                                "value": "#1f77b4"
+                            },
+                            "height": {
+                                "field": "height",
+                                "units": "data"
+                            },
+                            "line_alpha": {
+                                "value": 0.1
+                            },
+                            "line_color": {
+                                "value": "#1f77b4"
+                            },
+                            "width": {
+                                "units": "data",
+                                "value": 86400000
+                            },
+                            "x": {
+                                "field": "x"
+                            },
+                            "y": {
+                                "field": "y"
+                            }
+                        },
+                        "id": "1047",
+                        "type": "Rect"
+                    },
+                    {
+                        "attributes": {
+                            "text": "Candlestick Chart"
+                        },
+                        "id": "1002",
+                        "type": "Title"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1027",
+                        "type": "HelpTool"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1025",
+                        "type": "SaveTool"
+                    },
+                    {
+                        "attributes": {
+                            "callback": null,
+                            "data": {
+                                "height": {
+                                    "__ndarray__": "AAAAACxcE0AAAAAAULj2PwAAAADgeiNAAAAAANDMAEAAAAAAAHyUPwAAAACAcM0/AAAAAAAAFEAAAAAAYI/yPwAAAAAq3CVAAAAAAOR6GUAAAAAAZmYiQAAAAAAAAARAAAAAAMD14D8AAAAA9CgaQAAAAABQuABAAAAAAAAA4D8AAAAA6FEAQAAAAABIYStAAAAAAAjXD0AAAAAAQAoLQAAAAAAghRJAAAAAANCj8D8AAAAA8FEIQAAAAAAoXBFAAAAAAMT1EUAAAAAAIIX3PwAAAADgzOw/AAAAAIDr6T8AAAAAACn4PwAAAABgjwhAAAAAAFC4EkAAAAAAcD32PwAAAACYmSFAAAAAAOB69D8AAAAAgBTyPwAAAADgo/A/AAAAABDXD0AAAAAAFi4nQAAAAABI4RRAAAAAAPAo/D8AAAAAQOHyPwAAAADgzOQ/AAAAANgjIUAAAAAAYI/6PwAAAADoUQxAAAAAAAzXGEAAAAAAsEf9PwAAAAAAKfw/AAAAACCFCUAAAAAA8Cj4PwAAAADkehdAAAAAAFxPMkAAAAAAAOuxPwAAAABACgFAAAAAAIB6xD8AAAAAgArHPwAAAACgR+E/AAAAAMD14D8AAAAAAAAOQAAAAADoURNAAAAAAPAoDkAAAAAAgBQIQA==",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        62
+                                    ]
+                                },
+                                "x": {
+                                    "__ndarray__": "AADADQundkIAAIBzXad2QgAAQHD5qHZCAAAA1kupdkIAAMA7nql2QgAAgKHwqXZCAADA0ueqdkIAAAAE36t2QgAAwGkxrHZCAACAZs2tdkIAAAAycq52QgAAAMm7r3ZCAACAlGCwdkIAAIArqrF2QgAAAPdOsnZCAACAwvOydkIAAIBZPbR2QgAAQL+PtHZCAADAIX62dkIAAEDtIrd2QgAAAOq+uHZCAADATxG5dkIAAIBMrbp2QgAAQLL/unZCAAAAGFK7dkIAAIDj9rt2QgAAwBTuvHZCAACAqNO/dkIAAEAOJsB2QgAAQKVvwXZCAACA1mbCdkIAAAA5VcR2QgAAwJ6nxHZCAADANfHFdkIAAICbQ8Z2QgAAwMw6x3ZCAAAA/jHIdkIAAIDJ1sh2QgAAQC8pyXZCAAAALMXKdkIAAMCRF8t2QgAAgPdpy3ZCAABAXbzLdkIAAED0Bc12QgAAgCX9zXZCAABAIpnPdkIAAEBQLNJ2QgAAALZ+0nZCAABA53XTdkIAAMCyGtR2QgAAQH6/1HZCAABAFQnWdkIAAIBGANd2QgAAwHf313ZCAABAQ5zYdkIAAMAOQdl2QgAAQHEv23ZCAACAOXDddkIAAECfwt12QgAAgNC53nZCAACA/kzhdkIAAMAvROJ2Qg==",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        62
+                                    ]
+                                },
+                                "y": {
+                                    "__ndarray__": "AAAAkMKNbUAAAACQ65luQAAAAIDCfW9AAAAA4Hq8bkAAAAAQrj9uQAAAAPBR9G1AAAAA4FGwbEAAAADAHp1sQAAAABDXD2tAAAAAsEd9aEAAAAAwXGdoQAAAAGBmvmdAAAAAIIWPZ0AAAAAQrsdmQAAAAOBRtGhAAAAAAACYaUAAAAAQ10NrQAAAACBcA2tAAAAAMFxXbEAAAACA66lrQAAAAGBmwmtAAAAAsEd5a0AAAACAFJZsQAAAAEAKV2xAAAAA0KOkbUAAAABguDptQAAAALBH2WxAAAAA4Hrob0AAAACgcMlvQAAAAKBwE3BAAAAAwB7lbEAAAACQwkluQAAAAAAAyG1AAAAAYLiebEAAAACAFOpsQAAAAMD1cG1AAAAAAADgbEAAAACwRy1sQAAAAAAASGtAAAAAEK5XbEAAAACgcK1rQAAAADAzz2tAAAAAgOv1akAAAADAHt1qQAAAAPAobGxAAAAAsB75a0AAAACwHtluQAAAAGCPwm5AAAAAwPWMbkAAAAAQ14duQAAAAJDCcW5AAAAAIK4LbUAAAACwR0VuQAAAAIDrPW5AAAAAULhmbkAAAADQo/BsQAAAAPBRoG5AAAAAkMJjcEAAAABAMy1wQAAAAKBH/W9AAAAAEK7hc0AAAABACq1zQA==",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        62
+                                    ]
+                                }
+                            },
+                            "selected": {
+                                "id": "1072",
+                                "type": "Selection"
+                            },
+                            "selection_policy": {
+                                "id": "1073",
+                                "type": "UnionRenderers"
+                            }
+                        },
+                        "id": "1045",
+                        "type": "ColumnDataSource"
+                    },
+                    {
+                        "attributes": {
+                            "x0": {
+                                "field": "x0"
+                            },
+                            "x1": {
+                                "field": "x1"
+                            },
+                            "y0": {
+                                "field": "y0"
+                            },
+                            "y1": {
+                                "field": "y1"
+                            }
+                        },
+                        "id": "1036",
+                        "type": "Segment"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1023",
+                        "type": "WheelZoomTool"
+                    },
+                    {
+                        "attributes": {
+                            "callback": null
+                        },
+                        "id": "1004",
+                        "type": "DataRange1d"
+                    },
+                    {
+                        "attributes": {
+                            "days": [
+                                1,
+                                4,
+                                7,
+                                10,
+                                13,
+                                16,
+                                19,
+                                22,
+                                25,
+                                28
+                            ]
+                        },
+                        "id": "1060",
+                        "type": "DaysTicker"
+                    },
+                    {
+                        "attributes": {
+                            "fill_color": {
+                                "value": "green"
+                            },
+                            "height": {
+                                "field": "height",
+                                "units": "data"
+                            },
+                            "width": {
+                                "units": "data",
+                                "value": 86400000
+                            },
+                            "x": {
+                                "field": "x"
+                            },
+                            "y": {
+                                "field": "y"
+                            }
+                        },
+                        "id": "1041",
+                        "type": "Rect"
+                    },
+                    {
+                        "attributes": {
+                            "data_source": {
+                                "id": "1040",
+                                "type": "ColumnDataSource"
+                            },
+                            "glyph": {
+                                "id": "1041",
+                                "type": "Rect"
+                            },
+                            "hover_glyph": null,
+                            "muted_glyph": null,
+                            "nonselection_glyph": {
+                                "id": "1042",
+                                "type": "Rect"
+                            },
+                            "selection_glyph": null,
+                            "view": {
+                                "id": "1044",
+                                "type": "CDSView"
+                            }
+                        },
+                        "id": "1043",
+                        "type": "GlyphRenderer"
+                    },
+                    {
+                        "attributes": {},
+                        "id": "1008",
+                        "type": "LinearScale"
+                    },
+                    {
+                        "attributes": {
+                            "months": [
+                                0,
+                                2,
+                                4,
+                                6,
+                                8,
+                                10
+                            ]
+                        },
+                        "id": "1064",
+                        "type": "MonthsTicker"
+                    },
+                    {
+                        "attributes": {
+                            "below": [
+                                {
+                                    "id": "1012",
+                                    "type": "DatetimeAxis"
+                                }
+                            ],
+                            "center": [
+                                {
+                                    "id": "1016",
+                                    "type": "Grid"
+                                },
+                                {
+                                    "id": "1021",
+                                    "type": "Grid"
+                                }
+                            ],
+                            "left": [
+                                {
+                                    "id": "1017",
+                                    "type": "LinearAxis"
+                                }
+                            ],
+                            "plot_height": 400,
+                            "plot_width": 1000,
+                            "renderers": [
+                                {
+                                    "id": "1038",
+                                    "type": "GlyphRenderer"
+                                },
+                                {
+                                    "id": "1043",
+                                    "type": "GlyphRenderer"
+                                },
+                                {
+                                    "id": "1048",
+                                    "type": "GlyphRenderer"
+                                }
+                            ],
+                            "title": {
+                                "id": "1002",
+                                "type": "Title"
+                            },
+                            "toolbar": {
+                                "id": "1028",
+                                "type": "Toolbar"
+                            },
+                            "x_range": {
+                                "id": "1004",
+                                "type": "DataRange1d"
+                            },
+                            "x_scale": {
+                                "id": "1008",
+                                "type": "LinearScale"
+                            },
+                            "y_range": {
+                                "id": "1006",
+                                "type": "DataRange1d"
+                            },
+                            "y_scale": {
+                                "id": "1010",
+                                "type": "LinearScale"
+                            }
+                        },
+                        "id": "1001",
+                        "subtype": "Figure",
+                        "type": "Plot"
+                    },
+                    {
+                        "attributes": {
+                            "days": [
+                                1,
+                                15
+                            ]
+                        },
+                        "id": "1062",
+                        "type": "DaysTicker"
+                    },
+                    {
+                        "attributes": {
+                            "days": [
+                                1,
+                                8,
+                                15,
+                                22
+                            ]
+                        },
+                        "id": "1061",
+                        "type": "DaysTicker"
+                    },
+                    {
+                        "attributes": {
+                            "callback": null,
+                            "data": {
+                                "height": {
+                                    "__ndarray__": "AAAAAApXJkAAAAAArEcVQAAAAAB4FAhAAAAAADgKBUAAAAAA4HoEQAAAAACwRx1AAAAAAHBm8j8AAAAAeBQGQAAAAAAAuK4/AAAAAAAAKUAAAAAA8Cj4PwAAAABACgVAAAAAAHA9DEAAAAAAKFwNQAAAAACaGSNAAAAAALAe9T8AAAAAXI8WQAAAAACAmdk/AAAAALgeC0AAAAAAkMIDQAAAAACgcPE/AAAAAHwUE0AAAAAAwHDdPwAAAADsURVAAAAAAAAAFkAAAAAA2KMIQAAAAACA6wNAAAAAACCuC0AAAAAACNcWQAAAAACA6/E/AAAAACpcIUAAAAAAUrgiQAAAAACA6wdAAAAAABSuG0AAAAAA0MwOQAAAAACQwhhAAAAAAHA9CkAAAAAAwPUEQAAAAABgZvY/AAAAAGBm/j8AAAAAGK4FQAAAAACAwu0/AAAAAOxRHEAAAAAAAADQPwAAAADQo/w/AAAAAMD1EkAAAAAApHAjQAAAAABYjwJAAAAAAEAz4z8AAAAAEK7zPwAAAABcjxBAAAAAAMzMJ0AAAAAAIIUJQAAAAABQuPI/AAAAABSuH0AAAAAAVLgQQAAAAAAQrglAAAAAACCu5z8AAAAAuB4iQAAAAAAAUsg/AAAAAEDhAkAAAAAA8Cj0PwAAAAAACsc/AAAAAMD19D8AAAAA9mg+QAAAAAAAwsU/AAAAAIAUAEAAAAAAwB79Pw==",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        68
+                                    ]
+                                },
+                                "x": {
+                                    "__ndarray__": "AABA2a+ndkIAAIAKp6h2QgAAgDg6q3ZCAABAnoyrdkIAAACbKK12QgAAwAB7rXZCAABAzB+udkIAAMAuDrB2QgAAQPqysHZCAABAkfyxdkIAAMBcobJ2QgAAwPPqs3ZCAAAAJeK0dkIAAMCKNLV2QgAAALwrtnZCAACAh9C2dkIAAABTdbd2QgAAQIRsuHZCAACAtWO5dkIAAEAbtrl2QgAAgHpAvXZCAABA4JK9dkIAAABG5b12QgAAwKs3vnZCAAAA3S6/dkIAAMBCgb92QgAAAHR4wHZCAAAAC8LBdkIAAMBwFMJ2QgAAQDy5wnZCAACAbbDDdkIAAEDTAsR2QgAAgAT6xHZCAABAAZbGdkIAAABn6MZ2QgAAwGOEyHZCAAAAlXvJdkIAAEDGcsp2QgAAgI6zzHZCAAAAWljNdkIAAMC/qs12QgAAgLxGz3ZCAAAAiOvPdkIAAMDtPdB2QgAAAB810XZCAADAhIfRdkIAAIDq2dF2QgAAAE3I03ZCAACAGG3UdkIAAICvttV2QgAAAHtb1nZCAADA4K3WdkIAAIDdSdh2QgAAAKnu2HZCAAAAQDjadkIAAMClitp2QgAAgAvd2nZCAAAA14HbdkIAAEAIedx2QgAAAG7L3HZCAADA0x3ddkIAAEA2DN92QgAAAJxe33ZCAADAAbHfdkIAAIBnA+B2QgAAwJj64HZCAABAZJ/hdkIAAADK8eF2Qg==",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        68
+                                    ]
+                                },
+                                "y": {
+                                    "__ndarray__": "AAAAcD0ub0AAAACQwpVvQAAAAJDC2WxAAAAA8FHUbEAAAABgj4JpQAAAAKBwLWlAAAAAsEddaEAAAAAwXI9nQAAAAAApJGdAAAAAQDNrZ0AAAABwPaZpQAAAAIAUcmpAAAAA4KOEakAAAABQuKJqQAAAAPAoiGtAAAAA0KM4bEAAAACwR2FrQAAAAIAU7mtAAAAA0KOka0AAAABAM8drQAAAAOB6sGxAAAAAsB6RbUAAAAAQ18ttQAAAALBHTW5AAAAAAABYb0AAAABQ4VpvQAAAAMD1DnBAAAAAQAoncEAAAABwZmBwQAAAACBcb2xAAAAAkMLtbEAAAABQj7JtQAAAAEAKG21AAAAAULi+bEAAAAAAAIxtQAAAAMD1/GxAAAAAoJlJa0AAAADgozBsQAAAAKCZyWpAAAAA4HrUakAAAAAwXItrQAAAAKBwEWxAAAAAsEdBbEAAAABgZmpsQAAAANCj3GxAAAAAoHAlbUAAAAAgrkduQAAAAPAodG5AAAAAoJnJbkAAAAAQrhNuQAAAAPAoVGxAAAAAIIWTbUAAAABACmNuQAAAAHA9Dm1AAAAA8FE4bUAAAABQuL5tQAAAAKCZXW5AAAAA0KPwbkAAAACAwo1vQAAAAGC4HHBAAAAAwB4pcEAAAABwZt5vQAAAAEDh0m9AAAAAYGawckAAAADQzI5zQAAAAAAAenRAAAAAgBSgc0AAAAAAKaBzQA==",
+                                    "dtype": "float64",
+                                    "shape": [
+                                        68
+                                    ]
+                                }
+                            },
+                            "selected": {
+                                "id": "1070",
+                                "type": "Selection"
+                            },
+                            "selection_policy": {
+                                "id": "1071",
+                                "type": "UnionRenderers"
+                            }
+                        },
+                        "id": "1040",
+                        "type": "ColumnDataSource"
+                    },
+                    {
+                        "attributes": {
+                            "months": [
+                                0,
+                                4,
+                                8
+                            ]
+                        },
+                        "id": "1065",
+                        "type": "MonthsTicker"
+                    },
+                    {
+                        "attributes": {
+                            "line_alpha": {
+                                "value": 0.1
+                            },
+                            "line_color": {
+                                "value": "#1f77b4"
+                            },
+                            "x0": {
+                                "field": "x0"
+                            },
+                            "x1": {
+                                "field": "x1"
+                            },
+                            "y0": {
+                                "field": "y0"
+                            },
+                            "y1": {
+                                "field": "y1"
+                            }
+                        },
+                        "id": "1037",
+                        "type": "Segment"
+                    },
+                    {
+                        "attributes": {
+                            "months": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7,
+                                8,
+                                9,
+                                10,
+                                11
+                            ]
+                        },
+                        "id": "1063",
+                        "type": "MonthsTicker"
+                    },
+                    {
+                        "attributes": {
+                            "fill_color": {
+                                "value": "red"
+                            },
+                            "height": {
+                                "field": "height",
+                                "units": "data"
+                            },
+                            "width": {
+                                "units": "data",
+                                "value": 86400000
+                            },
+                            "x": {
+                                "field": "x"
+                            },
+                            "y": {
+                                "field": "y"
+                            }
+                        },
+                        "id": "1046",
+                        "type": "Rect"
+                    }
+                ],
+                "root_ids": [
+                    "1001"
+                ]
+            },
+            "title": "Bokeh Application",
+            "version": "1.3.4"
+        }
+    }
+</script>
+<script type="text/javascript">
+    (function () {
+        var fn = function () {
+            Bokeh.safely(function () {
+                (function (root) {
+                    function embed_document(root) {
+
+                        var docs_json = document.getElementById('1362').textContent;
+                        var render_items = [{
+                            "docid": "5718eeee-dbcd-4788-ba82-0614d440de5f",
+                            "roots": {"1001": "cfc57de1-a37e-415d-8fe2-1d52e190dc72"}
+                        }];
+                        root.Bokeh.embed.embed_items(docs_json, render_items);
+
+                    }
+
+                    if (root.Bokeh !== undefined) {
                         embed_document(root);
-                        clearInterval(timer);
-                      }
-                      attempts++;
-                      if (attempts > 100) {
-                        console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
-                        clearInterval(timer);
-                      }
-                    }, 10, root)
-                  }
+                    } else {
+                        var attempts = 0;
+                        var timer = setInterval(function (root) {
+                            if (root.Bokeh !== undefined) {
+                                embed_document(root);
+                                clearInterval(timer);
+                            }
+                            attempts++;
+                            if (attempts > 100) {
+                                console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                                clearInterval(timer);
+                            }
+                        }, 10, root)
+                    }
                 })(window);
-              });
-            };
-            if (document.readyState != "loading") fn();
-            else document.addEventListener("DOMContentLoaded", fn);
-          })();
-        </script>
-    
-  </body>
-  
+            });
+        };
+        if (document.readyState !== "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+    })();
+</script>
+
+</body>
+
 </html>

@@ -1,6 +1,8 @@
 from pandas_datareader import data
 from bokeh.plotting import figure, show, output_file
 import datetime
+from bokeh.embed import components
+from bokeh.resources import CDN
 
 # Create a start and end datetime
 start = datetime.datetime(2019, 5, 1)
@@ -53,5 +55,15 @@ plot_data.rect(my_data.index[my_data.Status == 'Decrease'], my_data.Middle[my_da
                my_data.Height[my_data.Status == 'Decrease'],
                fill_color='red', line_color='black')
 
+# This prints the plot data components as a tuple
+flask_script, div1 = components(plot_data)
+cdn_js = CDN.js_files
+cdn_css = CDN.css_files
+
+# Obtain the JS scripts from component CDN values
+print(cdn_js[0])
+print(cdn_css[0])
+
+# # Save the bokeh chart to an html file then show in browser
 output_file('stock_data/Candlestick_Chart.html')
 show(plot_data)
