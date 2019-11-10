@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from pandas.io.msgpack import dump
 
 my_app = Flask(__name__)
 
@@ -63,7 +64,7 @@ def plot():
     # This prints the plot data components as a tuple
     flask_script, div1 = components(plot_data)
     cdn_js = CDN.js_files[0]
-    cdn_css = CDN.css_files[0]
+    cdn_css = CDN.css_files
 
     return render_template('plot.html',
                            flask_script=flask_script,
