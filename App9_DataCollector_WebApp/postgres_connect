@@ -1,0 +1,13 @@
+create database on postgres server
+define postgres connection info in app:
+    POSTGRES = {
+    'user': 'postgres',
+    'pw': '0212181',
+    'db': 'height_data',
+    'host': 'localhost',
+    'port': '5432',
+}
+
+run python 'app.py' db init (to initialize db)
+run python 'app.py' db migrate to create changes and migrate data to db
+run python 'app.py' db upgrade to update db fields
