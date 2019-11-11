@@ -20,7 +20,7 @@ class Result(db.Model):
     __tablename__ = 'data'
 
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), unique=True)
+    email_ = db.Column(db.String(120), unique=True)
     height_ = db.Column(db.Integer)
 
     def __init__(self, email_, height_):
@@ -55,9 +55,19 @@ def success():
     if request.method == 'POST':
         email = request.form['email_name']
         height = request.form['height_name']
-        print(email, height)
+        print('email address:' + email, height + ' inches')
 
-        return render_template('success.html')
+        if db.session.query(Result).filter(Result.email_ == email).count() == 0:
+            # Create a data instance of the object class
+            data = Result(email, height)
+
+            # Add the data to the database and then commit it
+            db.session.add(data)
+            db.session.commit()
+
+            return render_template('success.html')
+        return render_template('index.html',
+                               text='Seems like the entered email address has already been used!')
 
 
 # Run main file (app) as a development package
