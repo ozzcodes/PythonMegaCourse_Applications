@@ -61,6 +61,10 @@ def close_program():
 def get_selected_row(event):
     # Since using bind function, need global variable for passed event(needed)
     # noinspection PyGlobalUndefined
+    """
+    Args:
+        event:
+    """
     global selected
     index = data_view.curselection()[0]
     selected = data_view.get(index)

@@ -5,6 +5,11 @@ import string
 
 # Generate random ISBN numbers
 def isbn_generator(size=12, chars=string.ascii_lowercase + string.digits):
+    """
+    Args:
+        size:
+        chars:
+    """
     return ''.join(random.choice(chars) for x in range(size))
 
 
@@ -20,6 +25,13 @@ def db_connect():
 
 # Create function to insert data
 def insert(title, author, year, isbn):
+    """
+    Args:
+        title:
+        author:
+        year:
+        isbn:
+    """
     conn = sqlite3.connect('books.sqlite')
     curs = conn.cursor()
     curs.execute("INSERT INTO bookstore VALUES (NULL, ?, ?, ?, ?)", (title, author, year, isbn))
@@ -29,6 +41,10 @@ def insert(title, author, year, isbn):
 
 # Create function to delete data (want the ability to search many criteria)
 def delete(id):
+    """
+    Args:
+        id:
+    """
     conn = sqlite3.connect('books.sqlite')
     curs = conn.cursor()
     curs.execute("DELETE FROM bookstore WHERE id=?", (id,))
@@ -38,6 +54,14 @@ def delete(id):
 
 # Allow user's to update an entry
 def update(id, title, author, year, isbn):
+    """
+    Args:
+        id:
+        title:
+        author:
+        year:
+        isbn:
+    """
     conn = sqlite3.connect('books.sqlite')
     curs = conn.cursor()
     # Update an item
@@ -60,6 +84,13 @@ def view():
 
 # Create a search function
 def search(title='', author='', year='', isbn=''):
+    """
+    Args:
+        title:
+        author:
+        year:
+        isbn:
+    """
     conn = sqlite3.connect('books.sqlite')
     curs = conn.cursor()
     curs.execute("SELECT * FROM bookstore WHERE title=? OR author=? OR year=? OR isbn=?", (title, author, year, isbn))

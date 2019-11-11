@@ -7,6 +7,10 @@ choose_no = ['no', 'n']
 
 
 def dictionary_app(get_word: str):
+    """
+    Args:
+        get_word (str):
+    """
     if get_word in dictionary_data:
         return dictionary_data[get_word]
     elif get_word not in dictionary_data:

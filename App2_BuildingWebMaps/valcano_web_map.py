@@ -16,6 +16,10 @@ my_map = folium.Map(location=[45.372, -121.697], zoom_start=5, tiles='Stamen Ter
 
 # Create a function for coloring the marker's by a volcanoes elevation
 def marker_color(elev):
+    """
+    Args:
+        elev:
+    """
     if elev in range(0, 1000):
         color = 'green'
     elif elev in range(1001, 3000):

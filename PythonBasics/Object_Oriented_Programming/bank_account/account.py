@@ -4,16 +4,28 @@ class Account:
     # Initialize the account
     def __init__(self, filepath):
         # Create local variable to access file path for later use
+        """
+        Args:
+            filepath:
+        """
         self.path = filepath
         with open(filepath, 'r') as file:
             self.balance = float(file.read())
 
     # Create another function for use in class
     def withdraw(self, amount):
+        """
+        Args:
+            amount:
+        """
         self.balance = self.balance - amount
 
     # Create deposit function and update account balance
     def deposit(self, amount):
+        """
+        Args:
+            amount:
+        """
         self.balance = self.balance + amount
 
     # Create a function to save the balance
@@ -41,11 +53,20 @@ Examples to use the bank account with Account class
 class Checking(Account):
 
     def __init__(self, filepath, fee):
+        """
+        Args:
+            filepath:
+            fee:
+        """
         Account.__init__(self, filepath)
         self.fee = fee
 
     # Create a transfer function
     def transfer(self, amount):
+        """
+        Args:
+            amount:
+        """
         self.balance = self.balance - amount - self.fee
 
 

@@ -1,4 +1,9 @@
 def area(a, b):
+    """
+    Args:
+        a:
+        b:
+    """
     return a * b
 
 
@@ -10,6 +15,10 @@ print(area(b=5, a=4))
 
 # Functions with an arbitrary number of non-keywords
 def mean(*args):
+    """
+    Args:
+        *args:
+    """
     return args
 
 
@@ -17,6 +26,10 @@ print(mean(1, 2, 'a', 4))
 
 
 def mean2(*args):
+    """
+    Args:
+        *args:
+    """
     return sum(args) / len(args)
 
 
@@ -29,6 +42,10 @@ kwargs = Keyword Arguments
 
 
 def mean3(**kwargs):
+    """
+    Args:
+        **kwargs:
+    """
     return kwargs
 
 

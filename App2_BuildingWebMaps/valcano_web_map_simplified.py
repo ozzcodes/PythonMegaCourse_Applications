@@ -9,6 +9,10 @@ my_map = folium.Map(location=[data['LAT'].mean(), data['LON'].mean()], zoom_star
 
 # Create a function for coloring the marker's by a volcanoes elevation
 def marker_color(elev):
+    """
+    Args:
+        elev:
+    """
     minimum = int(min(data['ELEV']))
     step_value = int((max(data['ELEV']) - min(data['ELEV'])) / 3)
 

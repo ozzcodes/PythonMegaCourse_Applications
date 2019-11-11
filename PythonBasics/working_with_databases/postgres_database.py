@@ -20,6 +20,12 @@ def create_table():
 
 # Enter some data
 def insert(item, quantity, price):
+    """
+    Args:
+        item:
+        quantity:
+        price:
+    """
     conn = psycopg2.connect("dbname='pgdb1' user='postgres' password='0212181' host='localhost' port='5432'")
     curs = conn.cursor()
     # curs.execute("INSERT INTO Mystore VALUES ('%s', '%s', '%s')" % (item, quantity, price))
@@ -42,6 +48,10 @@ def view():
 
 
 def delete(item):
+    """
+    Args:
+        item:
+    """
     conn = psycopg2.connect("dbname='pgdb1' user='postgres' password='0212181' host='localhost' port='5432'")
     curs = conn.cursor()
     # Delete an item
@@ -51,6 +61,12 @@ def delete(item):
 
 
 def update(quantity, price, item):
+    """
+    Args:
+        quantity:
+        price:
+        item:
+    """
     conn = psycopg2.connect("dbname='pgdb1' user='postgres' password='0212181' host='localhost' port='5432'")
     curs = conn.cursor()
     # Update an item

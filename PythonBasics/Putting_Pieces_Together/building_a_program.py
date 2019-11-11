@@ -1,5 +1,9 @@
 # Building a Maker-Function
 def sentence_maker(phrase):
+    """
+    Args:
+        phrase:
+    """
     capitalized = phrase.capitalize()
     interrogatives = ('how', 'what', 'why', 'where', 'when')
     if phrase.startswith(interrogatives):

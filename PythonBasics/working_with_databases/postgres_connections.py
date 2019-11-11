@@ -15,6 +15,12 @@ def create_table():
 
 # Enter some data
 def insert(item, quantity, price):
+    """
+    Args:
+        item:
+        quantity:
+        price:
+    """
     conn = psycopg2.connect('db.sqlite')
     curs = conn.cursor()
     curs.execute("INSERT INTO Mystore VALUES (?, ?, ?)", (item, quantity, price))
@@ -41,6 +47,10 @@ def view():
 
 
 def delete(item):
+    """
+    Args:
+        item:
+    """
     conn = psycopg2.connect('db.sqlite')
     curs = conn.cursor()
     # Delete an item
@@ -50,6 +60,12 @@ def delete(item):
 
 
 def update(quantity, price, item):
+    """
+    Args:
+        quantity:
+        price:
+        item:
+    """
     conn = psycopg2.connect('db.sqlite')
     curs = conn.cursor()
     # Update an item

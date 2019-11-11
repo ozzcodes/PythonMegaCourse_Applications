@@ -7,6 +7,10 @@ choose_no = ['no', 'n']
 
 
 def dictionary_app(get_word):
+    """
+    Args:
+        get_word:
+    """
     if get_word in dictionary_data:
         # Use the difflib's get_close_match function
         return dictionary_data[get_word]

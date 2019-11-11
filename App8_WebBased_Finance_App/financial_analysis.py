@@ -19,6 +19,11 @@ my_data = data.DataReader(name='TSLA', data_source='yahoo', start=start, end=end
 
 # Create new column to dataframe, status
 def margin_change(cl, op):
+    """
+    Args:
+        cl:
+        op:
+    """
     if cl > op:
         value = 'Increase'
     elif cl < op:

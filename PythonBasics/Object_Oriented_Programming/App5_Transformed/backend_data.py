@@ -8,6 +8,10 @@ class MyDatabase:
 
     # Create database connection
     def __init__(self, db):
+        """
+        Args:
+            db:
+        """
         self.conn = sqlite3.connect(db)
         self.curs = self.conn.cursor()
         self.curs.execute("CREATE TABLE IF NOT EXISTS bookstore ("
@@ -16,21 +20,45 @@ class MyDatabase:
 
     # Generate random ISBN numbers
     def isbn_generator(self, size=12, chars=string.ascii_lowercase + string.digits):
+        """
+        Args:
+            size:
+            chars:
+        """
         return ''.join(random.choice(chars) for self.x in range(size))
 
     # Create function to insert data
     def insert(self, title, author, year, isbn):
+        """
+        Args:
+            title:
+            author:
+            year:
+            isbn:
+        """
         self.curs.execute("INSERT INTO bookstore VALUES (NULL, ?, ?, ?, ?)", (title, author, year, isbn))
         self.conn.commit()
 
     # Create function to delete data (want the ability to search many criteria)
     def delete(self, id):
+        """
+        Args:
+            id:
+        """
         self.curs.execute("DELETE FROM bookstore WHERE id=?", (id,))
         self.conn.commit()
 
     # Allow user's to update an entry
     def update(self, id, title, author, year, isbn):
         # Update an item
+        """
+        Args:
+            id:
+            title:
+            author:
+            year:
+            isbn:
+        """
         self.curs.execute("UPDATE bookstore SET title=?, author=?, year=?, isbn=? WHERE id=?",
                           (title, author, year, isbn, id))  # Need a comma for SQLite after parameter
         self.conn.commit()
@@ -44,6 +72,13 @@ class MyDatabase:
 
     # Create a search function
     def search(self, title='', author='', year='', isbn=''):
+        """
+        Args:
+            title:
+            author:
+            year:
+            isbn:
+        """
         self.curs.execute("SELECT * FROM bookstore WHERE title=? OR author=? OR year=? OR isbn=?",
                           (title, author, year, isbn))
         rows = self.curs.fetchall()
