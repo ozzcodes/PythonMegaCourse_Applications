@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from App9_DataCollector_WebApp.send_email import send_email
+import email
 
 # Create the flask app
 app = Flask(__name__)
