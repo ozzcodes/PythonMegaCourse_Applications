@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
 from App9_DataCollector_WebApp.send_email import send_email
 import email
 
@@ -32,9 +34,6 @@ class Result(db.Model):
     def __repr__(self):
         return '<id {}>'.format(self.id)
 
-
-from flask_script import Manager
-from flask_migrate import Migrate, MigrateCommand
 
 migrate = Migrate(app, db)
 manager = Manager(app)
