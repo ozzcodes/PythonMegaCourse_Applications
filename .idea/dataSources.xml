@@ -33,7 +33,7 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="height_data@localhost" uuid="5ed4258a-5ce0-4d7d-bba9-0297b87e2d02">
+    <data-source source="LOCAL" name="height_data@localhost" uuid="f861a543-1303-4577-873b-e6709850f042">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
