@@ -1,4 +1,3 @@
-# noinspection PyUnresolvedReferences,PyPackageRequirements
 from send_email import send_email
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy

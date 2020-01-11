@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Lib" />
       <excludeFolder url="file://$MODULE_DIR$/Scripts" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (multiappsvenv)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.7 (PythonMegaCourse_Applications)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="leaflet" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
@@ -28,8 +28,5 @@
         <option value="$MODULE_DIR$/App9_DataCollector_WebApp/templates" />
       </list>
     </option>
-  </component>
-  <component name="TestRunnerService">
-    <option name="PROJECT_TEST_RUNNER" value="Unittests" />
   </component>
 </module>

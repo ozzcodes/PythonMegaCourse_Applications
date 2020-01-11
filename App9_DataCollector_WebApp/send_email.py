@@ -3,12 +3,13 @@ import smtplib
 
 
 def send_email(email, height):
-    from_email = ''
-    from_password = '!'
+    from_email = 'ajwaldro@gmail.com'
+    from_password = 'OzzMan0212181!'
     to_email = email
 
     subject = "Height information"
-    message = "Hello, your height is %s." % height
+    message = "Hello, your height is <strong>%s</strong>." % height
+
     msg = MIMEText(message, 'html')
     msg['Subject'] = subject
     msg['To'] = to_email
