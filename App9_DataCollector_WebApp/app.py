@@ -35,8 +35,8 @@ class Result(db.Model):
         self.email_ = email_
         self.height_ = height_
 
-    def __repr__(self):
-        return '<id {}>'.format(self.id)
+    # def __repr__(self):
+    #     return '<id {}>'.format(self.id)
 
 
 migrate = Migrate(app, db)
