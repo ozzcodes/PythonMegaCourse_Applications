@@ -8,8 +8,8 @@ def push_email(email, height, average_height, count):
     to_email = email
 
     subject = "Height information"
-    message = "Hello, your height is <strong>%s</strong>. Average height of all entries is <strong>%s</strong> out of " \
-              "<strong>%s</strong> number of entries" % (
+    message = "Hello, your height is <strong>%s</strong>. Average height of all entries is <strong>%s</strong> out " \
+              "of <strong>%s</strong> entry('s)" % (
                   height, average_height, count)
 
     msg = MIMEText(message, 'html')
