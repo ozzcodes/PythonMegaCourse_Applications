@@ -1,4 +1,5 @@
-from send_email import send_email
+# noinspection PyUnresolvedReferences
+from send_email import push_email
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
@@ -17,6 +18,7 @@ POSTGRES = {
 }
 
 # Database Configuration
+app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://%(user)s:\
 %(pw)s@%(host)s:%(port)s/%(db)s' % POSTGRES
 SQLALCHEMY_TRACK_MODIFICATIONS = True
@@ -60,8 +62,6 @@ def success():
     if request.method == 'POST':
         email = request.form['email_name']
         height = request.form['height_name']
-        send_email(email, height)
-        print('email address:' + email, height + ' inches')
 
         if db.session.query(Result).filter(Result.email_ == email).count() == 0:
             # Create a data instance of the object class
@@ -74,7 +74,11 @@ def success():
             # Calculation for average height
             average_height = db.session.query(func.avg(Result.height_)).scalar()
             average_height = round(average_height, 1)
-            print(average_height)
+            count = db.session.query(Result.height_).count()
+            push_email(email, height, average_height, count)
+            print('email address:' + email, 'your height =', height, 'inches and an average height of:', average_height,
+                  'inches')
+            print('The total entry counts: ', count)
 
             return render_template('success.html')
     return render_template('index.html',
