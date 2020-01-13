@@ -26,6 +26,7 @@
         <option value="$MODULE_DIR$/App4_WebsiteBuilder_Flask/templates" />
         <option value="$MODULE_DIR$/App8_WebBased_Finance_App/templates" />
         <option value="$MODULE_DIR$/App9_DataCollector_WebApp/templates" />
+        <option value="$MODULE_DIR$/App9_DataCollector_WebApp/flask-app-878/templates" />
       </list>
     </option>
   </component>
