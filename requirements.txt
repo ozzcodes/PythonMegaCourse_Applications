@@ -43,9 +43,9 @@ nbconvert==5.6.1
 nbformat==5.0.3
 notebook==6.0.2
 numpy==1.18.1
-opencv-contrib-python==4.1.2.30
-opencv-python==4.1.1.26
-packaging==19.2
+opencv-contrib-python
+opencv-python
+packaging
 pandas==0.25.3
 pandas-datareader==0.8.1
 pandocfilters==1.4.2
@@ -60,7 +60,7 @@ Pygments==2.4.2
 PyInstaller==3.6
 pyparsing==2.4.2
 pyrsistent==0.15.5
-python-dateutil==2.8.0
+python-dateutil
 pytz==2019.2
 # pywin32==225
 pywin32-ctypes==0.2.0
@@ -82,6 +82,6 @@ wcwidth==0.1.8
 webencodings==0.5.1
 Werkzeug==0.16.0
 widgetsnbextension==3.5.1
-xlrd==1.2.0
-yfinance==0.1.54
+xlrd
+yfinance
 zipp==0.6.0
