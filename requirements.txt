@@ -42,7 +42,7 @@ multitasking==0.0.9
 nbconvert==5.6.1
 nbformat==5.0.3
 notebook==6.0.2
-numpy==1.18.1
+numpy==1.22.0
 opencv-contrib-python
 opencv-python
 packaging
